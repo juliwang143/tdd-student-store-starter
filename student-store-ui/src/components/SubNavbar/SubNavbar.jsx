@@ -7,7 +7,7 @@ export default function SubNavbar() {
         <div className="content">
             <div className="row">
                 <div className="search-bar">
-                    <input type="text" name="search" placeholder="Search" value="" />
+                    <input type="text" name="search" placeholder="Search" defaultValue="" />
                     <i className="material-icons">search</i>
                 </div>
                 <div className="links">
@@ -45,4 +45,6 @@ export default function SubNavbar() {
     </nav>
   )
 }
+
+
 

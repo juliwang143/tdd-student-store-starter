@@ -1,0 +1,12 @@
+.product-card {
+    background: var(--pure-white);
+    display: flex;
+    flex-direction: column;
+    border: solid 1px var(--border-color);
+    max-width: 800px;
+}
+
+svg {
+height: 20px;
+    width: 20px;
+}
