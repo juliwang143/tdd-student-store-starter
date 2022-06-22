@@ -5,27 +5,12 @@ import Home from "../Home/Home"
 import "./App.css"
 import ProductView from "../ProductView/ProductView";
 import ProductDetail from "../ProductDetail/ProductDetail";
+import About from "../About/About";
+import Contact from "../Contact/Contact";
+import { HashLink } from 'react-router-hash-link';
 
 import axios from 'axios';
-
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-// import { createRoot } from "react-dom/client";
-
-// export default function App() {
-//   return (
-//     <div className="app">
-//       <BrowserRouter>
-//         <main>
-//           {/* YOUR CODE HERE! */}
-//           <Navbar />
-//           <Sidebar />
-//           <Home />
-//         </main>
-//       </BrowserRouter>
-//     </div>
-//   )
-// }
-
+import { Routes, Route, Link, useParams, BrowserRouter } from 'react-router-dom'
 
 export default function App() {
   // state variables
@@ -72,12 +57,29 @@ export default function App() {
 
   return (
     <div className="app">
-        <main>
-          <Navbar  />
-          <Sidebar />
-          <Home products={products} handleAddItemToCart={handleAddItemToCart} handleRemoveItemFromCart={handleRemoveItemFromCart} />
-          <ProductDetail handleAddItemToCart={handleAddItemToCart} handleRemoveItemFromCart={handleRemoveItemFromCart} ></ProductDetail>
-        </main>
+      <BrowserRouter>
+      <main>
+        <Navbar  />
+        <Sidebar />
+        {/* <Home products={products} handleAddItemToCart={handleAddItemToCart} handleRemoveItemFromCart={handleRemoveItemFromCart} />           */}
+
+        <ProductDetail handleAddItemToCart={handleAddItemToCart} handleRemoveItemFromCart={handleRemoveItemFromCart} ></ProductDetail>
+
+        <Routes>
+              <Route exact path='/' element={<Home products={products} handleAddItemToCart={handleAddItemToCart} handleRemoveItemFromCart={handleRemoveItemFromCart} />} />
+              <Route exact path='/#about' element={<About />} />
+              <Route exact path='/#contact' element={<Contact />} />
+              {/* <Route exact path='/store/:name' element={<ProductDetail/>}/> */}
+
+              {/* <Route path='/contact' component={ProductDetail } />
+              <Route path='/about' component={Sidebar} /> */}
+        </Routes>
+
+        <About></About>
+        <Contact></Contact>
+
+      </main>
+      </BrowserRouter>
     </div>
   )
 }

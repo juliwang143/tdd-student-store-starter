@@ -14,13 +14,3 @@ export default function Home({ products, handleAddItemToCart, handleRemoveItemFr
   )
 }
 
-
-
-
-
-
-
-
-
-
-

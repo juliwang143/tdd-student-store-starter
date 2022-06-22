@@ -2,29 +2,29 @@ import * as React from "react"
 import "./Navbar.css"
 import "../Sidebar/Sidebar"
 
+import Logo from "../Logo/Logo";
+import { Routes, Route, Link, useParams} from 'react-router-dom'
+import { HashLink } from 'react-router-hash-link';
+
 export default function Navbar() {
 
   return (
     <nav className="navbar">
       <div className="content">
-        <div className="logo">
-          <a href="/">
-            <img src="https://codepath-student-store-demo.surge.sh/assets/codepath.f1b3e41a.svg" alt="codepath logo" />
-          </a>
-        </div>
         <div className="socials"></div>
         <ul className="links">
           <li>
-            <a href="/">Home</a>
+            <Link to='/' className="nav-link">Home</Link>
           </li>
           <li>
-            <a href="/#Buy">Buy Now</a>
+            <HashLink smooth to={'/#about'}>
+              About Us
+            </HashLink>
           </li>
           <li>
-            <a href="/#About">About Us</a>
-          </li>
-          <li>
-            <a href="/#Contact">Contact</a>
+            <HashLink smooth to={'/#contact'}>
+              Contact Us
+            </HashLink>
           </li>
         </ul>
       </div>
