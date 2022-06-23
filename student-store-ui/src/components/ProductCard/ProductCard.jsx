@@ -13,7 +13,6 @@ export default function ProductCard({
   handleRemoveItemFromCart,
   showDescription,
 }) {
-
   return (
     <div className="product-card">
       <div className="media">

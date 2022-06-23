@@ -29,6 +29,10 @@ export default function App() {
   const [shoppingCart, setShoppingCart] = React.useState([]);
   const [checkoutForm, setCheckoutForm] = React.useState("");
 
+  for (const item in shoppingCart) {
+    console.log("heeelloo " + JSON.stringify(item));
+  }
+
   // handler functions
   function handleOnToggle() {
     setIsOpen((prevIsOpen) => !prevIsOpen);
@@ -56,24 +60,10 @@ export default function App() {
       }
     }
 
-    // If product is not in cart
-
-    // if (!isInShoppingCart) {
     let newItem = { itemId: productId, quantity: 1 };
     const newShoppingCart = [...shoppingCart, newItem];
-    console.log("newShoppingCart: ", newShoppingCart);
-
+    console.log("hi");
     setShoppingCart(newShoppingCart);
-    console.log("shoppingCart: ", shoppingCart);
-
-    // } else {
-    // If product is in cart
-    // let tempShoppingCart = shoppingCart.slice();
-    // let index = tempShoppingCart.findIndex((element) => {
-    //   return element.itemId === productId;
-    // });
-    //
-    // }
   }
 
   function handleRemoveItemFromCart(productId) {
@@ -86,8 +76,10 @@ export default function App() {
     }
 
     if (isInShoppingCart) {
-      let filteredArray = shoppingCart.filter((item) => item !== productId);
-      setShoppingCart({ shoppingCart: filteredArray });
+      let tempShoppingCart = shoppingCart.slice();
+      tempShoppingCart.filter((element) => element.itemId !== productId);
+      tempShoppingCart.filter((element) => element.quantity > 0);
+      setShoppingCart(tempShoppingCart);
     }
 
     // if (shoppingCart.includes(productId)) {
@@ -119,7 +111,7 @@ export default function App() {
         setIsFetching(false);
       }
     );
-  }, []);
+  });
 
   return (
     <div className="app">
@@ -146,6 +138,7 @@ export default function App() {
                   products={products}
                   handleAddItemToCart={handleAddItemToCart}
                   handleRemoveItemFromCart={handleRemoveItemFromCart}
+                  setProducts={setProducts}
                 />
               }
             />
@@ -157,6 +150,7 @@ export default function App() {
                   products={products}
                   handleAddItemToCart={handleAddItemToCart}
                   handleRemoveItemFromCart={handleRemoveItemFromCart}
+                  setProducts={setProducts}
                 />
               }
             />
