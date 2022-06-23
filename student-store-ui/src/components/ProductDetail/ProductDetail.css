@@ -1,0 +1,17 @@
+.spacer {
+    height: 3rem;
+}
+
+h1 {
+    align-items: center;
+    display: flex;
+}
+
+/* #product-id {
+    display: flex;
+} */
+
+.product-detail {
+    display: flex;
+    justify-content: center;
+}

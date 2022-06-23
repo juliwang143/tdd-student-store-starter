@@ -11,7 +11,7 @@ export default function Navbar() {
   return (
     <nav className="navbar">
       <div className="content">
-        <div className="socials"></div>
+        {/* <div className="socials"></div> */}
         <ul className="links">
           {/* <li>
             <Link to='/' className="nav-link">Home</Link>

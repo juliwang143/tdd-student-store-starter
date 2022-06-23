@@ -8,6 +8,7 @@ import ProductDetail from "../ProductDetail/ProductDetail";
 import About from "../About/About";
 import Contact from "../Contact/Contact";
 import { HashLink } from 'react-router-hash-link';
+import SubNavbar from "../SubNavbar/SubNavbar";
 
 import axios from 'axios';
 import { Routes, Route, Link, useParams, BrowserRouter } from 'react-router-dom'
@@ -78,8 +79,7 @@ export default function App() {
       <main id='home'>
         <Navbar  />
         <Sidebar isOpen={isOpen} shoppingCart={shoppingCart} products={products} checkoutForm={checkoutForm} handleOnCheckoutFormChange={handleOnCheckoutFormChange} handleOnSubmitCheckoutForm={handleOnSubmitCheckoutForm} handleOnToggle={handleOnToggle} />
-        {/* <Home products={products} handleAddItemToCart={handleAddItemToCart} handleRemoveItemFromCart={handleRemoveItemFromCart} />           */}
-        {/* <ProductDetail handleAddItemToCart={handleAddItemToCart} handleRemoveItemFromCart={handleRemoveItemFromCart} ></ProductDetail> */}
+        {/* <SubNavbar></SubNavbar> */}
 
         <Routes>
               <Route exact path='/' element={<Home products={products} handleAddItemToCart={handleAddItemToCart} handleRemoveItemFromCart={handleRemoveItemFromCart} />} />
