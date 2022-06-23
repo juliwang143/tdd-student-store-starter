@@ -25,10 +25,8 @@ export default function Contact() {
                         <span className="socials"></span>
                     </li>
                 </ul>
-                <div className="media">
-                    {/* TODO */}
-                    {/* <img src="/assets/happy_person.517b658d.svg" alt="codepath large" /> */}
-                </div>
+                {/* <div className="media">
+                </div> */}
             </div>
         </div>
     </div>

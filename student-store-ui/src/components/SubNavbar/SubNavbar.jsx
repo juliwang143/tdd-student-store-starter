@@ -3,7 +3,7 @@ import "./SubNavbar.css"
 
 export default function SubNavbar() {
   return (
-    <nav className="sub-navbar">
+    <nav className="sub-navbar" >
         <div className="content">
             <div className="row">
                 <div className="search-bar">
@@ -11,15 +11,15 @@ export default function SubNavbar() {
                     <i className="material-icons">search</i>
                 </div>
                 <div className="links">
-                    <span className="help">
+                    {/* <span className="help">
                         <i className="material-icons">help</i>Help
-                    </span>
+                    </span> */}
                     <div className="cart">
                         <a href="/">My Cart<i className="material-icons">shopping_cart</i></a>
                     </div>
                 </div>
             </div>
-            <div className="row">
+            <div className="row" id="buy">
                 <div className="hamburger-menu">
                     <i className="material-icons">menu</i>
                 </div>

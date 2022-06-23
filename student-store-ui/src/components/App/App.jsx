@@ -23,7 +23,8 @@ export default function App() {
 
   // handler functions
   function handleOnToggle() {
-    setIsOpen(!isOpen);
+    setIsOpen(prevIsOpen => !prevIsOpen);
+    console.log('is open: ' + isOpen);
   }
 
   function handleAddItemToCart(productId) {
@@ -47,10 +48,26 @@ export default function App() {
     }
   }
 
+  // TODO 
+  function handleOnCheckoutFormChange() {
+
+  }
+  
+  // TODO
+  function handleOnSubmitCheckoutForm() {
+
+  }
+
   React.useEffect(() => {
+    // Fetching true
+    setIsFetching(true);
+
     axios.get("https://codepath-store-api.herokuapp.com/store").then(
+      // Fetching false
       function (response) {
         setProducts(response.data.products);
+
+        setIsFetching(false);
       }
     )
   }, []);
@@ -58,21 +75,18 @@ export default function App() {
   return (
     <div className="app">
       <BrowserRouter>
-      <main>
+      <main id='home'>
         <Navbar  />
-        <Sidebar />
+        <Sidebar isOpen={isOpen} shoppingCart={shoppingCart} products={products} checkoutForm={checkoutForm} handleOnCheckoutFormChange={handleOnCheckoutFormChange} handleOnSubmitCheckoutForm={handleOnSubmitCheckoutForm} handleOnToggle={handleOnToggle} />
         {/* <Home products={products} handleAddItemToCart={handleAddItemToCart} handleRemoveItemFromCart={handleRemoveItemFromCart} />           */}
-
-        <ProductDetail handleAddItemToCart={handleAddItemToCart} handleRemoveItemFromCart={handleRemoveItemFromCart} ></ProductDetail>
+        {/* <ProductDetail handleAddItemToCart={handleAddItemToCart} handleRemoveItemFromCart={handleRemoveItemFromCart} ></ProductDetail> */}
 
         <Routes>
               <Route exact path='/' element={<Home products={products} handleAddItemToCart={handleAddItemToCart} handleRemoveItemFromCart={handleRemoveItemFromCart} />} />
+              <Route exact path='/#buy' element={<Home products={products} handleAddItemToCart={handleAddItemToCart} handleRemoveItemFromCart={handleRemoveItemFromCart} />} />
               <Route exact path='/#about' element={<About />} />
               <Route exact path='/#contact' element={<Contact />} />
-              {/* <Route exact path='/store/:name' element={<ProductDetail/>}/> */}
-
-              {/* <Route path='/contact' component={ProductDetail } />
-              <Route path='/about' component={Sidebar} /> */}
+              <Route exact path='/products/:productId' element={<ProductDetail setIsFetching={setIsFetching} isFetching={isFetching} handleAddItemToCart={handleAddItemToCart} handleRemoveItemFromCart={handleRemoveItemFromCart}/>}/>
         </Routes>
 
         <About></About>

@@ -1,12 +1,39 @@
-.product-card {
-    background: var(--pure-white);
-    display: flex;
-    flex-direction: column;
-    border: solid 1px var(--border-color);
-    max-width: 800px;
+.media {
+    height: auto;
+    margin: 0rem;
 }
 
-svg {
-height: 20px;
+.product-card .product-info {
+    flex: 1;
+    display: flex;
+    border-top: solid 1px var(--border-color);
+    margin-bottom: auto;
+}
+
+.stars {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 40px;
+}
+
+.stars svg {
+    height: 20px;
     width: 20px;
+}
+
+.product-card .main-info .product-price {
+    font-size: 14px;
+}
+
+.product-card .actions {
+    width: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
 }

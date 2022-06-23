@@ -12,10 +12,8 @@ export default function About() {
                     <p>We've searched far and wide for items that perk the interests of even the most eccentric students and decided to offer them all here in one place.</p>
                     <p>All proceeds go towards bringing high quality CS education to college students around the country.</p>
                 </div>
-                <div className="media">
-                    {/* TODO */}
-                    {/* <img src="/assets/giant_codepath.6952ef57.svg" alt="codepath large" /> */}
-                </div>
+                {/* <div className="media">
+                </div> */}
             </div>
         </div>
     </div>

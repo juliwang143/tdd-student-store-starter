@@ -13,8 +13,18 @@ export default function Navbar() {
       <div className="content">
         <div className="socials"></div>
         <ul className="links">
-          <li>
+          {/* <li>
             <Link to='/' className="nav-link">Home</Link>
+          </li> */}
+          <li>
+            <HashLink smooth to={'/#home'}>
+              Home
+            </HashLink>
+          </li>
+          <li>
+            <HashLink smooth to={'/#buy'}>
+              Buy Now
+            </HashLink>
           </li>
           <li>
             <HashLink smooth to={'/#about'}>
