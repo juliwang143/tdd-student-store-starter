@@ -37,3 +37,12 @@
     display: flex;
     flex-direction: column;
 }
+
+.desc {
+    margin-left: 0.5rem;
+    margin-right: 1rem;
+}
+
+.product-name {
+    font-weight: bold;
+}

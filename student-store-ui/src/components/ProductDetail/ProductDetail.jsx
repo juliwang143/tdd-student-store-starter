@@ -24,7 +24,7 @@ export default function ProductDetail({ setIsFetching, isFetching, handleAddItem
 
   return (
     <div className="product-detail-wrapper">
-      <div class='spacer'></div>
+      <div className='spacer'></div>
       <Hero></Hero>
       <SubNavbar></SubNavbar>
       <div className="product-detail">

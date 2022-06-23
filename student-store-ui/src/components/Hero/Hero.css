@@ -2,6 +2,10 @@
     box-sizing: border-box;
 }
 
+#welcome {
+    font-size: 2rem;
+}
+
 .hero-img {
     width: 100px; 
     height: 100px; 

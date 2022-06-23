@@ -1,0 +1,85 @@
+.header {
+    display: flex;
+    flex-direction: column;
+    background: var(--pure-white);
+    border: solid 1px var(--border-color);
+    border-radius: 4px;
+    width: 100%;
+}
+
+.shopping-cart .header-row {
+    display: flex;
+    height: 50px;
+    margin-bottom: 15px;
+    background-color: lavender;
+    width: 100%;
+}
+
+.CartTable {
+    width: 100%;
+    /* margin: 0 10px; */
+    margin: auto;
+}
+
+.shopping-cart .header-row span {
+    flex: 1;
+    color: var(--pure-white);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 17px;
+    font-weight: 600;
+    margin-left: 15px;
+}
+
+.shopping-cart .product-row {
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 20px;
+    margin-top: 10px;
+    border-bottom: solid 1px var(--border-color);
+}
+
+.shopping-cart .product-row span {
+    flex: 1;
+}
+
+.shopping-cart .receipt {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 4px;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.shopping-cart .CartTable .header {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border: solid 1px var(--border-color);
+    border-radius: 4px;
+    width: 100%;
+}
+
+.shopping-cart .receipt .receipt-subtotal {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 0;
+}
+
+.shopping-cart .receipt .receipt-taxes {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 0;
+}
+
+.shopping-cart .receipt .receipt-total {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 0;
+    font-weight: bold;
+}

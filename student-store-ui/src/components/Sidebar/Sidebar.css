@@ -1,6 +1,5 @@
 .sidebar .open {
-    width: 575px;
-    background: blue;
+    /* width: 575px; */
     width: 100%;
 }
 
@@ -20,15 +19,25 @@ h3 {
     flex-direction: column;
     align-items: center;
     width: 100%;
-    height: 70px;
+    /* height: 70px; */
+    height: 100vh;
+}
+
+#open-button {
+    margin-left: 0px;
+    margin-top: 2rem;
+    margin-bottom: 0px;
+    margin-right: 0px;
+    width: auto;
+}
+
+.toggle-button .open {
+    transform: rotateY(180deg);
+    /* margin: 0px; */
 }
 
 .toggle-button {
     margin: 2rem;
-}
-
-.toggle-button.open {
-    transform: rotateY(180deg);
 }
 
 .shopping-cart .open {
@@ -37,20 +46,24 @@ h3 {
 
 .shopping-cart {
     width: 100%;
-    color: #fff;
+    /* color: #fff; */
+    /* color: black; */
+    height: 100vh;
+    background-color: aliceblue;
 }
 
 .sidebar i {
     margin-right: 10px;
     cursor: pointer;
-    color: #fff;
+    color: black;
     align-items: center;
-    margin-top: 20px;
+    margin-top: 5px;
     margin-left: 10px;
 }
 
 .notification {
-    color: #fff;
+    /* color: #fff; */
+    color: black;
     text-align: center;
     margin: 10px;
 }
@@ -71,7 +84,8 @@ h3 {
     cursor: pointer;
     background: transparent;
     border: solid 1px white;
-    color: #fff;
+    /* color: #fff; */
+    color: black;
 }
 
 .checkout-success {
@@ -97,6 +111,10 @@ h3 {
     overflow-y: scroll;
     padding-bottom: 2rem;
     /* border-right: solid 1px white; */
+}
+
+.checkout-form-input {
+    width: 100%;
 }
 
 * {

@@ -14,7 +14,6 @@ export default function ProductCard({
   showDescription,
 }) {
 
-  console.log('product', typeof product, product);
   return (
     <div className="product-card">
       <div className="media">
@@ -25,7 +24,7 @@ export default function ProductCard({
       <div className="product-info">
         <div className="main-info">
           <p className="product-name">{product.name}</p>
-          <div className="stars">
+          {/* <div className="stars">
             <svg
               x="0px"
               y="0px"
@@ -96,7 +95,7 @@ export default function ProductCard({
                 fill="var(--star-color-filled)"
               ></path>
             </svg>
-          </div>
+          </div> */}
           <p className="product-price">${product.price?.toFixed(2)}</p>
         </div>
         {showDescription && (
