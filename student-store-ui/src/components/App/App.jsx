@@ -33,7 +33,6 @@ export default function App() {
   // added
   const [searchContent, setSearchContent] = React.useState("");
 
-  console.log("aewfwefawefawf");
   console.log(shoppingCart);
 
   function handleSearchChange(e) {

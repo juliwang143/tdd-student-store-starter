@@ -48,7 +48,7 @@ export default function ShoppingCart({
           No items added to cart yet. Start shopping now!
         </div>
         {/* TODO */}
-        <CartTable shoppingCart={shoppingCart}></CartTable>
+        <CartTable shoppingCart={shoppingCart} products={products}></CartTable>
 
         <CheckoutForm></CheckoutForm>
         <div className="checkout-success">
@@ -71,9 +71,7 @@ export default function ShoppingCart({
   );
 }
 
-function CartTable({ shoppingCart }) {
-  console.log("shopping::" + shoppingCart.length);
-
+function CartTable({ shoppingCart, products }) {
   return (
     <div className="CartTable">
       <div className="header">
@@ -90,8 +88,9 @@ function CartTable({ shoppingCart }) {
             return (
               <li key={element.itemId}>
                 <ProductRow
-                  itemId={element.itemId}
+                  productId={element.itemId}
                   quantity={element.quantity}
+                  products={products}
                 ></ProductRow>
               </li>
             );
@@ -129,13 +128,30 @@ function CartTable({ shoppingCart }) {
   );
 }
 
-function ProductRow() {
+function ProductRow({ productId, quantity, products }) {
+  let productName;
+  let productPrice;
+  let productSubtotal;
+
+  for (let i = 0; i < products.length; i++) {
+    if (products[i].id === productId) {
+      productName = products[i].name;
+      productPrice = products[i].price;
+      productSubtotal = quantity * productPrice;
+      break;
+    }
+  }
+
   return (
     <div className="product-row">
-      <span className="flex-2 cart-product-name">Rice Krispies</span>
-      <span className="center cart-product-quantity">1</span>
-      <span className="center cart-product-price">$0.99</span>
-      <span className="center cart-product-subtotal">$0.99</span>
+      <span className="flex-2 cart-product-name">{productName}</span>
+      <span className="center cart-product-quantity">{quantity}</span>
+      <span className="center cart-product-price">
+        ${productPrice?.toFixed(2)}
+      </span>
+      <span className="center cart-product-subtotal">
+        ${productSubtotal?.toFixed(2)}
+      </span>
     </div>
   );
 }
