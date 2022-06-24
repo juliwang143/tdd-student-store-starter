@@ -27,21 +27,32 @@ export default function App() {
   const [error, setError] = React.useState("");
   const [isOpen, setIsOpen] = React.useState(false);
   const [shoppingCart, setShoppingCart] = React.useState([]);
-  const [checkoutForm, setCheckoutForm] = React.useState("");
+  // const [checkoutForm, setCheckoutForm] = React.useState({
+  //   user: { name: "", email: "" },
+  //   shoppingCart: [],
+  // });
+  const [checkoutForm, setCheckoutForm] = React.useState({});
   const [category, setCategory] = React.useState("all");
-
-  // added
   const [searchContent, setSearchContent] = React.useState("");
 
-  // const [subtotal, setSubtotal] = React.useState(0);
-  // const [taxes, setTaxes] = React.useState(0);
-  // const [total, setTotal] = React.useState(0);
+  // added
+  // const name = React.useRef("");
+  // const email = React.useRef("");
+  const [name, setName] = React.useState("");
+  const [email, setEmail] = React.useState("");
+
+  function handleNameChange(e) {
+    console.log(e.target.value);
+    setName(e.target.value);
+  }
+
+  function handleEmailChange(e) {
+    setEmail(e.target.value);
+  }
 
   const subtotal = React.useRef(0);
   const taxes = React.useRef(0);
   const total = React.useRef(0);
-
-  // console.log(shoppingCart);
 
   function handleSearchChange(e) {
     setSearchContent(e.target.value);
@@ -132,77 +143,33 @@ export default function App() {
   function handleOnCheckoutFormChange() {}
 
   // TODO
-  function handleOnSubmitCheckoutForm() {}
+  // async function handleOnSubmitCheckoutForm() {
+  //   console.log("!!!");
+  //   let postRequest = {
+  //     user: { name: name, email: email },
+  //     shoppingCart: shoppingCart,
+  //   };
 
-  // React.useEffect(() => {
-  //   // added and the search content in dependencies
-  //   console.log("in use effect");
-
-  //   // Fetching true
-  //   setIsFetching(true);
-
-  //   axios.get("https://codepath-store-api.herokuapp.com/store").then(
-  //     // Fetching false
-  //     function (response) {
-  //       const responseProducts = response.data.products;
-  //       if (category === "all") {
-  //         setProducts(responseProducts);
-  //       } else {
-  //         const tempProducts = products.filter((element) => {
-  //           return element.category === category;
-  //         });
-  //         setProducts(tempProducts);
-  //         console.log("tempProducts:" + tempProducts);
-  //       }
-  //       setIsFetching(false);
-
-  //       // added this
-  //       // handleSearch();
-  //     }
+  //   let post = await axios.post(
+  //     "https://codepath-store-api.herokuapp.com/store",
+  //     postRequest
   //   );
-  // }, [searchContent, subtotal, category]);
+  //   console.log("posting! " + post.response);
+  // }
 
-  // React.useEffect(() => {
-  //   // added and the search content in dependencies
-  //   console.log("in use effect");
+  function handleOnSubmitCheckoutForm() {
+    console.log("!!!");
+    let postRequest = {
+      user: { name: name, email: email },
+      shoppingCart: shoppingCart,
+    };
 
-  //   // Fetching true
-  //   setIsFetching(true);
-
-  //   axios.get("https://codepath-store-api.herokuapp.com/store").then(
-  //     // Fetching false
-  //     function (response) {
-  //       const responseProducts = response.data.products;
-  //       let categoryProducts;
-  //       if (category === "all") {
-  //         categoryProducts = responseProducts;
-  //       } else {
-  //         const tempProducts = products.filter((element) => {
-  //           return element.category === category;
-  //         });
-  //         categoryProducts = tempProducts;
-  //       }
-
-  //       const searchProducts = categoryProducts.filter((element) => {
-  //         return element.name
-  //           .toLowerCase()
-  //           .includes(searchContent.toLowerCase());
-  //       });
-  //       setProducts(searchProducts);
-
-  //       setIsFetching(false);
-
-  //       console.log("category! : " + category);
-  //       console.log("search: " + searchContent);
-
-  //       console.log("categoryProducts " + categoryProducts);
-  //       console.log("searchProducts " + searchProducts);
-
-  //       // added this
-  //       // handleSearch();
-  //     }
-  //   );
-  // }, [searchContent, subtotal, category]);
+    axios
+      .post("https://codepath-store-api.herokuapp.com/store", postRequest)
+      .then((response) => {
+        console.log(response);
+      });
+  }
 
   React.useEffect(() => {
     // added and the search content in dependencies
@@ -237,6 +204,13 @@ export default function App() {
             subtotal={subtotal}
             taxes={taxes}
             total={total}
+            // added
+            name={name}
+            email={email}
+            handleNameChange={handleNameChange}
+            handleEmailChange={handleEmailChange}
+            setName={setName}
+            setEmail={setEmail}
           />
           <Routes>
             <Route

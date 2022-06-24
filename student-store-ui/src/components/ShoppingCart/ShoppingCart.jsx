@@ -18,28 +18,22 @@ export default function ShoppingCart({
   handleOnCheckoutFormChange,
   handleOnSubmitCheckoutForm,
   handleOnToggle,
-  // setSubtotal,
-  // setTaxes,
-  // setTotal,
-  //
   subtotal,
   taxes,
   total,
+  name,
+  email,
+  handleNameChange,
+  handleEmailChange,
+  setName,
+  setEmail,
 }) {
-  console.log("ewfwaefewfw");
-  for (const item in shoppingCart) {
-    console.log("item: " + item);
-  }
-
-  const [name, setName] = React.useState("");
-  const [email, setEmail] = React.useState("");
-
   function handleNameChange(event) {
     setName(event.target.value);
   }
 
   function handleEmailChange(event) {
-    setName(event.target.value);
+    setEmail(event.target.value);
   }
 
   return (
@@ -54,20 +48,21 @@ export default function ShoppingCart({
         <div className="notification">
           No items added to cart yet. Start shopping now!
         </div>
-        {/* TODO */}
         <CartTable
           shoppingCart={shoppingCart}
           products={products}
-          // setSubtotal={setSubtotal}
-          // setTaxes={setTaxes}
-          // setTotal={setTotal}
-          //
           subtotal={subtotal}
           taxes={taxes}
           total={total}
         ></CartTable>
 
-        <CheckoutForm></CheckoutForm>
+        <CheckoutForm
+          name={name}
+          email={email}
+          handleNameChange={handleNameChange}
+          handleEmailChange={handleEmailChange}
+          handleOnSubmitCheckoutForm={handleOnSubmitCheckoutForm}
+        ></CheckoutForm>
         <div className="checkout-success">
           <h3>
             Checkout Info
@@ -88,17 +83,7 @@ export default function ShoppingCart({
   );
 }
 
-function CartTable({
-  shoppingCart,
-  products,
-  // setSubtotal,
-  // setTaxes,
-  // setTotal,
-  //
-  subtotal,
-  taxes,
-  total,
-}) {
+function CartTable({ shoppingCart, products, subtotal, taxes, total }) {
   return (
     <div className="CartTable">
       <div className="header">
@@ -118,10 +103,6 @@ function CartTable({
                   productId={element.itemId}
                   quantity={element.quantity}
                   products={products}
-                  // setSubtotal={setSubtotal}
-                  // setTaxes={setTaxes}
-                  // setTotal={setTotal}
-                  //
                   subtotal={subtotal}
                   taxes={taxes}
                   total={total}
@@ -130,13 +111,6 @@ function CartTable({
             );
           })}
         </ul>
-
-        {/* <div className="product-row">
-          <span className="flex-2 cart-product-name">Rice Krispies</span>
-          <span className="center cart-product-quantity">1</span>
-          <span className="center cart-product-price">$0.99</span>
-          <span className="center cart-product-subtotal">$0.99</span>
-        </div> */}
       </div>
       <div className="receipt">
         <div className="receipt-subtotal">
@@ -166,18 +140,7 @@ function CartTable({
   );
 }
 
-function ProductRow({
-  productId,
-  quantity,
-  products,
-  // setSubtotal,
-  // setTaxes,
-  // setTotal,
-  //
-  subtotal,
-  taxes,
-  total,
-}) {
+function ProductRow({ productId, quantity, products, subtotal, taxes, total }) {
   let productName;
   let productPrice;
   let productSubtotal;
@@ -187,17 +150,6 @@ function ProductRow({
       productName = products[i].name;
       productPrice = products[i].price;
       productSubtotal = quantity * productPrice;
-
-      // setSubtotal((prevSubtotal) => prevSubtotal + productSubtotal);
-      // setTaxes((prevTaxes) => prevTaxes + 0.1 * productSubtotal);
-      // setTotal((prevTotal) => prevTotal + 1.1 * productSubtotal);
-
-      // subtotal.current += productSubtotal;
-      // taxes.current += 0.1 * productSubtotal;
-      // total.current += 1.1 * productSubtotal;
-
-      // console.log("product subtotal: " + productSubtotal);
-
       break;
     }
   }

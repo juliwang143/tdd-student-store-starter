@@ -7,6 +7,10 @@ export default function CheckoutForm({
   checkoutForm,
   handleOnCheckoutFormChange,
   handleOnSubmitCheckoutForm,
+  name,
+  email,
+  handleNameChange,
+  handleEmailChange,
 }) {
   return (
     <div className="checkout-form">
@@ -24,7 +28,8 @@ export default function CheckoutForm({
             className="checkout-form-input"
             type="text"
             placeholder="Student Name"
-            defaultValue=""
+            value={name}
+            onChange={handleNameChange}
           />
         </div>
       </div>
@@ -36,7 +41,8 @@ export default function CheckoutForm({
             className="checkout-form-input"
             type="email"
             placeholder="student@codepath.org"
-            defaultValue=""
+            value={email}
+            onChange={handleEmailChange}
           />
         </div>
       </div>
@@ -54,7 +60,12 @@ export default function CheckoutForm({
       <p className="is-danger"></p>
       <div className="field">
         <div className="control">
-          <button className="button checkout-button">Checkout</button>
+          <button
+            className="button checkout-button"
+            onClick={handleOnSubmitCheckoutForm}
+          >
+            Checkout
+          </button>
         </div>
       </div>
     </div>

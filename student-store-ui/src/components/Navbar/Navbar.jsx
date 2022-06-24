@@ -10,20 +10,10 @@ export default function Navbar() {
   return (
     <nav className="navbar">
       <div className="content">
-        {/* <div className="socials"></div> */}
         <ul className="links">
           <li>
-            {/* <HashLink smooth to={"/#home"}>
-              <img
-                id="logo"
-                src="https://codepath-student-store-demo.surge.sh/assets/codepath.f1b3e41a.svg"
-                alt="codepath logo"
-              />
-            </HashLink> */}
             <Logo></Logo>
           </li>
-
-          {/* previous */}
           <li>
             <HashLink smooth to={"/#home"}>
               Home

@@ -10,13 +10,16 @@ export default function Sidebar({
   handleOnCheckoutFormChange,
   handleOnSubmitCheckoutForm,
   handleOnToggle,
-  // setSubtotal,
-  // setTaxes,
-  // setTotal,
-  //
   subtotal,
   taxes,
   total,
+  // added
+  name,
+  email,
+  handleNameChange,
+  handleEmailChange,
+  setName,
+  setEmail,
 }) {
   return (
     <div>
@@ -29,13 +32,16 @@ export default function Sidebar({
           handleOnCheckoutFormChange={handleOnCheckoutFormChange}
           handleOnSubmitCheckoutForm={handleOnSubmitCheckoutForm}
           handleOnToggle={handleOnToggle}
-          // setSubtotal={setSubtotal}
-          // setTaxes={setTaxes}
-          // setTotal={setTotal}
-          //
           subtotal={subtotal}
           taxes={taxes}
           total={total}
+          // added
+          name={name}
+          email={email}
+          handleNameChange={handleNameChange}
+          handleEmailChange={handleEmailChange}
+          setName={setName}
+          setEmail={setEmail}
         />
       ) : (
         <ClosedSidebar
@@ -46,13 +52,16 @@ export default function Sidebar({
           handleOnCheckoutFormChange={handleOnCheckoutFormChange}
           handleOnSubmitCheckoutForm={handleOnSubmitCheckoutForm}
           handleOnToggle={handleOnToggle}
-          // setSubtotal={setSubtotal}
-          // setTaxes={setTaxes}
-          // setTotal={setTotal}
-          //
           subtotal={subtotal}
           taxes={taxes}
           total={total}
+          // added
+          name={name}
+          email={email}
+          handleNameChange={handleNameChange}
+          handleEmailChange={handleEmailChange}
+          setName={setName}
+          setEmail={setEmail}
         />
       )}
     </div>
@@ -67,13 +76,16 @@ function ClosedSidebar({
   handleOnCheckoutFormChange,
   handleOnSubmitCheckoutForm,
   handleOnToggle,
-  // setSubtotal,
-  // setTaxes,
-  // setTotal,
-  //
   subtotal,
   taxes,
   total,
+  // added
+  name,
+  email,
+  handleNameChange,
+  handleEmailChange,
+  setName,
+  setEmail,
 }) {
   return (
     <section className="sidebar closed">
@@ -94,13 +106,16 @@ function OpenSidebar({
   handleOnCheckoutFormChange,
   handleOnSubmitCheckoutForm,
   handleOnToggle,
-  // setSubtotal,
-  // setTaxes,
-  // setTotal,
-  //
   subtotal,
   taxes,
   total,
+  // added
+  name,
+  email,
+  handleNameChange,
+  handleEmailChange,
+  setName,
+  setEmail,
 }) {
   return (
     <section className="sidebar open">
@@ -120,13 +135,16 @@ function OpenSidebar({
           handleOnCheckoutFormChange={handleOnCheckoutFormChange}
           handleOnSubmitCheckoutForm={handleOnSubmitCheckoutForm}
           handleOnToggle={handleOnToggle}
-          // setSubtotal={setSubtotal}
-          // setTaxes={setTaxes}
-          // setTotal={setTotal}
-          //
           subtotal={subtotal}
           taxes={taxes}
           total={total}
+          // added
+          name={name}
+          email={email}
+          handleNameChange={handleNameChange}
+          handleEmailChange={handleEmailChange}
+          setName={setName}
+          setEmail={setEmail}
         ></ShoppingCart>
       </div>
     </section>

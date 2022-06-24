@@ -116,6 +116,5 @@ input {
 }
 
 .is-active button {
-    /* border-bottom: solid 2px var(--bright-green); */
     text-decoration: underline;
 }
