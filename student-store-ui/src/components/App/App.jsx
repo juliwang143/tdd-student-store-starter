@@ -28,9 +28,27 @@ export default function App() {
   const [isOpen, setIsOpen] = React.useState(false);
   const [shoppingCart, setShoppingCart] = React.useState([]);
   const [checkoutForm, setCheckoutForm] = React.useState("");
+  const [category, setCategory] = React.useState("");
 
-  for (const item in shoppingCart) {
-    console.log("heeelloo " + JSON.stringify(item));
+  // added
+  const [searchContent, setSearchContent] = React.useState("");
+
+  console.log("aewfwefawefawf");
+  console.log(shoppingCart);
+
+  function handleSearchChange(e) {
+    // console.log("event:: " + JSON.stringify(e.target.value));
+    setSearchContent(e.target.value);
+  }
+
+  function handleSearch() {
+    console.log("products: " + products.length);
+    const tempProducts = products.filter((element) => {
+      return element.name.toLowerCase().includes(searchContent.toLowerCase());
+    });
+
+    console.log("after filtering: " + tempProducts);
+    setProducts(tempProducts);
   }
 
   // handler functions
@@ -39,58 +57,46 @@ export default function App() {
   }
 
   function handleAddItemToCart(productId) {
-    let isInShoppingCart = false;
-
-    // Finding clicked product
     for (let i = 0; i < shoppingCart.length; i++) {
       if (shoppingCart[i].itemId === productId) {
-        isInShoppingCart = true;
+        let tempShoppingCart = [...shoppingCart];
+        let index = tempShoppingCart.findIndex(
+          (element) => element.itemId == productId
+        );
+        tempShoppingCart[index] = {
+          itemId: productId,
+          quantity: tempShoppingCart[index].quantity + 1,
+        };
 
-        const newShoppingCart = shoppingCart.map((item) => {
-          if (item.productId === productId) {
-            let oldQuantity = item.quantity;
-            return { itemId: productId, quantity: oldQuantity + 1 };
-          } else {
-            return item;
-          }
-        });
-
-        setShoppingCart(newShoppingCart);
+        setShoppingCart(tempShoppingCart);
         return;
       }
     }
 
     let newItem = { itemId: productId, quantity: 1 };
     const newShoppingCart = [...shoppingCart, newItem];
-    console.log("hi");
     setShoppingCart(newShoppingCart);
   }
 
   function handleRemoveItemFromCart(productId) {
-    let isInShoppingCart = false;
-    for (const item of shoppingCart) {
-      if (item.itemId === productId) {
-        isInShoppingCart = true;
-        break;
+    for (let i = 0; i < shoppingCart.length; i++) {
+      if (shoppingCart[i].itemId === productId) {
+        let tempShoppingCart = [...shoppingCart];
+        let tempShoppingCart2 = tempShoppingCart.map(function (element) {
+          if (element.itemId === productId) {
+            return { itemId: productId, quantity: element.quantity - 1 };
+          } else {
+            return element;
+          }
+        });
+        let tempShoppingCart3 = tempShoppingCart2.filter(
+          (element) => element.quantity > 0
+        );
+
+        setShoppingCart(tempShoppingCart3);
+        return;
       }
     }
-
-    if (isInShoppingCart) {
-      let tempShoppingCart = shoppingCart.slice();
-      tempShoppingCart.filter((element) => element.itemId !== productId);
-      tempShoppingCart.filter((element) => element.quantity > 0);
-      setShoppingCart(tempShoppingCart);
-    }
-
-    // if (shoppingCart.includes(productId)) {
-    //   // let tempShoppingCart = shoppingCart.splice();
-    //   // tempShoppingCart.filter(element => element.itemId !== productId);
-    //   // tempShoppingCart.filter(element => element.quantity > 0);
-    //   // setShoppingCart(tempShoppingCart);
-    //
-    //   let filteredArray = this.state.shoppingCart.filter(item => item !== productId)
-    //   this.setState({shoppingCart: filteredArray});
-    // }
   }
 
   // TODO
@@ -100,6 +106,9 @@ export default function App() {
   function handleOnSubmitCheckoutForm() {}
 
   React.useEffect(() => {
+    // added and the search content in dependencies
+    console.log("in use effect");
+
     // Fetching true
     setIsFetching(true);
 
@@ -107,11 +116,13 @@ export default function App() {
       // Fetching false
       function (response) {
         setProducts(response.data.products);
-
         setIsFetching(false);
+
+        // added this
+        // handleSearch();
       }
     );
-  });
+  }, [searchContent]);
 
   return (
     <div className="app">
@@ -139,6 +150,12 @@ export default function App() {
                   handleAddItemToCart={handleAddItemToCart}
                   handleRemoveItemFromCart={handleRemoveItemFromCart}
                   setProducts={setProducts}
+                  searchContent={searchContent}
+                  setSearchContent={setSearchContent}
+                  handleSearchChange={handleSearchChange}
+                  // added
+                  category={category}
+                  setCategory={setCategory}
                 />
               }
             />
@@ -151,6 +168,12 @@ export default function App() {
                   handleAddItemToCart={handleAddItemToCart}
                   handleRemoveItemFromCart={handleRemoveItemFromCart}
                   setProducts={setProducts}
+                  searchContent={searchContent}
+                  setSearchContent={setSearchContent}
+                  handleSearchChange={handleSearchChange}
+                  // added
+                  category={category}
+                  setCategory={setCategory}
                 />
               }
             />

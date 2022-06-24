@@ -48,7 +48,7 @@ export default function ShoppingCart({
           No items added to cart yet. Start shopping now!
         </div>
         {/* TODO */}
-        <CartTable></CartTable>
+        <CartTable shoppingCart={shoppingCart}></CartTable>
 
         <CheckoutForm></CheckoutForm>
         <div className="checkout-success">
@@ -71,7 +71,9 @@ export default function ShoppingCart({
   );
 }
 
-function CartTable() {
+function CartTable({ shoppingCart }) {
+  console.log("shopping::" + shoppingCart.length);
+
   return (
     <div className="CartTable">
       <div className="header">
@@ -81,12 +83,27 @@ function CartTable() {
           <span className="center">Unit Price</span>
           <span className="center">Cost</span>
         </div>
-        <div className="product-row">
+        <ul>
+          {shoppingCart.map((element) => {
+            console.log("awefawefawefawefawef");
+            console.log(shoppingCart);
+            return (
+              <li key={element.itemId}>
+                <ProductRow
+                  itemId={element.itemId}
+                  quantity={element.quantity}
+                ></ProductRow>
+              </li>
+            );
+          })}
+        </ul>
+
+        {/* <div className="product-row">
           <span className="flex-2 cart-product-name">Rice Krispies</span>
           <span className="center cart-product-quantity">1</span>
           <span className="center cart-product-price">$0.99</span>
           <span className="center cart-product-subtotal">$0.99</span>
-        </div>
+        </div> */}
       </div>
       <div className="receipt">
         <div className="receipt-subtotal">
@@ -108,6 +125,17 @@ function CartTable() {
           <span className="center total-price">$1.08</span>
         </div>
       </div>
+    </div>
+  );
+}
+
+function ProductRow() {
+  return (
+    <div className="product-row">
+      <span className="flex-2 cart-product-name">Rice Krispies</span>
+      <span className="center cart-product-quantity">1</span>
+      <span className="center cart-product-price">$0.99</span>
+      <span className="center cart-product-subtotal">$0.99</span>
     </div>
   );
 }

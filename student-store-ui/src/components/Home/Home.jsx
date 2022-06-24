@@ -10,12 +10,27 @@ export default function Home({
   handleRemoveItemFromCart,
   // added
   setProducts,
+  searchContent,
+  setSearchContent,
+  handleSearchChange,
+
+  // added
+  category,
+  setCategory,
 }) {
   return (
     <div className="home">
       <Hero></Hero>
       {/* <SubNavbar products={products} ></SubNavbar> */}
-      <SubNavbar products={products} setProducts={setProducts}></SubNavbar>
+      <SubNavbar
+        products={products}
+        setProducts={setProducts}
+        searchContent={searchContent}
+        setSearchContent={setSearchContent}
+        handleSearchChange={handleSearchChange}
+        category={category}
+        setCategory={setCategory}
+      ></SubNavbar>
 
       <ProductGrid
         products={products}
