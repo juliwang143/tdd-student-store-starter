@@ -19,6 +19,9 @@ export default function Sidebar({
   handleEmailChange,
   setName,
   setEmail,
+  checkoutStatus,
+  setCheckoutStatus,
+  handleCheckoutStatusChange,
 }) {
   return (
     <div>
@@ -40,6 +43,9 @@ export default function Sidebar({
           handleEmailChange={handleEmailChange}
           setName={setName}
           setEmail={setEmail}
+          checkoutStatus={checkoutStatus}
+          setCheckoutStatus={setCheckoutStatus}
+          handleCheckoutStatusChange={handleCheckoutStatusChange}
         />
       ) : (
         <ClosedSidebar handleOnToggle={handleOnToggle} />
@@ -77,6 +83,9 @@ function OpenSidebar({
   handleEmailChange,
   setName,
   setEmail,
+  checkoutStatus,
+  setCheckoutStatus,
+  handleCheckoutStatusChange,
 }) {
   return (
     <section className="sidebar open">
@@ -105,6 +114,9 @@ function OpenSidebar({
           handleEmailChange={handleEmailChange}
           setName={setName}
           setEmail={setEmail}
+          checkoutStatus={checkoutStatus}
+          setCheckoutStatus={setCheckoutStatus}
+          handleCheckoutStatusChange={handleCheckoutStatusChange}
         ></ShoppingCart>
       </div>
     </section>

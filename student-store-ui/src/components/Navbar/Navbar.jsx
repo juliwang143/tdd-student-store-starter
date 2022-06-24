@@ -3,7 +3,6 @@ import "./Navbar.css";
 import "../Sidebar/Sidebar";
 
 import Logo from "../Logo/Logo";
-import { Routes, Route, Link, useParams } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 
 export default function Navbar() {

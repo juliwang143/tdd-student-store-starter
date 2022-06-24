@@ -14,6 +14,7 @@ export default function Home({
   handleSearchChange,
   category,
   setCategory,
+  handleOnToggle,
 }) {
   return (
     <div className="home">
@@ -26,6 +27,7 @@ export default function Home({
         handleSearchChange={handleSearchChange}
         category={category}
         setCategory={setCategory}
+        handleOnToggle={handleOnToggle}
       ></SubNavbar>
 
       <ProductGrid

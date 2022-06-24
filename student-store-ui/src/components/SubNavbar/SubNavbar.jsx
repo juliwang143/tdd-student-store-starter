@@ -1,5 +1,6 @@
 import * as React from "react";
 import "./SubNavbar.css";
+import { HashLink } from "react-router-hash-link";
 
 export default function SubNavbar({
   products,
@@ -9,6 +10,7 @@ export default function SubNavbar({
   handleSearchChange,
   category,
   setCategory,
+  handleOnToggle,
 }) {
   const [type, setType] = React.useState("all");
 
@@ -43,9 +45,9 @@ export default function SubNavbar({
           </div>
           <div className="links">
             <div className="cart">
-              <a href="/">
+              <button onClick={handleOnToggle}>
                 My Cart<i className="material-icons">shopping_cart</i>
-              </a>
+              </button>
             </div>
           </div>
         </div>

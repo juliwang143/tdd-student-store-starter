@@ -43,7 +43,7 @@ export default function ProductDetail({
       <div className="product-detail-wrapper">
         <div className="spacer"></div>
         <Hero></Hero>
-        <SubNavbar></SubNavbar>
+        {/* <SubNavbar></SubNavbar> */}
         <div className="product-detail">
           {isFetching ? (
             <h1 className="loading">Loading</h1>

@@ -23,6 +23,9 @@ export default function App() {
   const [name, setName] = React.useState("");
   const [email, setEmail] = React.useState("");
 
+  const [checkoutStatus, setCheckoutStatus] = React.useState("");
+  // const checkoutStatus = React.useRef("");
+
   const subtotal = React.useRef(0);
   const taxes = React.useRef(0);
   const total = React.useRef(0);
@@ -38,6 +41,10 @@ export default function App() {
 
   function handleSearchChange(e) {
     setSearchContent(e.target.value);
+  }
+
+  function handleCheckoutStatusChange() {
+    setCheckoutStatus("");
   }
 
   function handleSearch() {
@@ -122,6 +129,9 @@ export default function App() {
 
   function handleOnSubmitCheckoutForm() {
     // TODO if shopping cart is empty
+    // if (shoppingCart.length === 0) {
+    //   setCheckoutStatus("error: no items in shopping cart");
+    // }
 
     console.log("!!!");
     let postRequest = {
@@ -132,7 +142,20 @@ export default function App() {
       .post("https://codepath-store-api.herokuapp.com/store", postRequest)
       .then((response) => {
         console.log(response);
+        setCheckoutStatus("success");
+        // checkoutStatus.current = "success";
+      })
+      .catch((error) => {
+        setCheckoutStatus("error");
+        // checkoutStatus.current = "error: " + error.response;
       });
+
+    setShoppingCart([]);
+    setCheckoutForm({});
+    setName("");
+    setEmail("");
+
+    console.log("just submitted");
   }
 
   React.useEffect(() => {
@@ -171,6 +194,9 @@ export default function App() {
             handleEmailChange={handleEmailChange}
             setName={setName}
             setEmail={setEmail}
+            checkoutStatus={checkoutStatus}
+            setCheckoutStatus={setCheckoutStatus}
+            handleCheckoutStatusChange={handleCheckoutStatusChange}
           />
           <Routes>
             <Route
@@ -187,6 +213,8 @@ export default function App() {
                   handleSearchChange={handleSearchChange}
                   category={category}
                   setCategory={setCategory}
+                  // added
+                  handleOnToggle={handleOnToggle}
                 />
               }
             />
@@ -204,6 +232,8 @@ export default function App() {
                   handleSearchChange={handleSearchChange}
                   category={category}
                   setCategory={setCategory}
+                  // added
+                  handleOnToggle={handleOnToggle}
                 />
               }
             />
