@@ -8,20 +8,16 @@ export default function Home({
   products,
   handleAddItemToCart,
   handleRemoveItemFromCart,
-  // added
   setProducts,
   searchContent,
   setSearchContent,
   handleSearchChange,
-
-  // added
   category,
   setCategory,
 }) {
   return (
     <div className="home">
       <Hero></Hero>
-      {/* <SubNavbar products={products} ></SubNavbar> */}
       <SubNavbar
         products={products}
         setProducts={setProducts}

@@ -76,6 +76,11 @@ export default function App() {
   }
 
   function handleAddItemToCart(productId) {
+    const product = getProduct(productId);
+    subtotal.current += product.price;
+    taxes.current += 0.1 * product.price;
+    total.current += 1.1 * product.price;
+
     for (let i = 0; i < shoppingCart.length; i++) {
       if (shoppingCart[i].itemId === productId) {
         let tempShoppingCart = [...shoppingCart];
@@ -95,18 +100,16 @@ export default function App() {
     let newItem = { itemId: productId, quantity: 1 };
     const newShoppingCart = [...shoppingCart, newItem];
     setShoppingCart(newShoppingCart);
-
-    // added for subtotal, etc.
-    // TODO this is delayed??? because of set state right
-    const product = getProduct(productId);
-    subtotal.current += product.price;
-    taxes.current += 0.1 * product.price;
-    total.current += 1.1 * product.price;
   }
 
   function handleRemoveItemFromCart(productId) {
     for (let i = 0; i < shoppingCart.length; i++) {
       if (shoppingCart[i].itemId === productId) {
+        const product = getProduct(productId);
+        subtotal.current -= product.price;
+        taxes.current -= 0.1 * product.price;
+        total.current -= 1.1 * product.price;
+
         let tempShoppingCart = [...shoppingCart];
         let tempShoppingCart2 = tempShoppingCart.map(function (element) {
           if (element.itemId === productId) {
