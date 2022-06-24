@@ -13,11 +13,9 @@ export default function SubNavbar({
   const [type, setType] = React.useState("all");
 
   function handleSearch() {
-    // commented out
     const tempProducts = products.filter((element) => {
       return element.name.toLowerCase().includes(searchContent.toLowerCase());
     });
-    console.log("after filtering: " + tempProducts);
     setProducts(tempProducts);
   }
 
@@ -39,9 +37,6 @@ export default function SubNavbar({
               value={searchContent}
               onChange={handleSearchChange}
             />
-            {/* <button className="search-button" onClick={handleSearch}>
-              <i className="material-icons">search</i>
-            </button> */}
             <button className="search-button">
               <i className="material-icons">search</i>
             </button>

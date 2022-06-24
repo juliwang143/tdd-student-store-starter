@@ -12,9 +12,18 @@ export default function Navbar() {
       <div className="content">
         {/* <div className="socials"></div> */}
         <ul className="links">
-          {/* <li>
-            <Link to='/' className="nav-link">Home</Link>
-          </li> */}
+          <li>
+            {/* <HashLink smooth to={"/#home"}>
+              <img
+                id="logo"
+                src="https://codepath-student-store-demo.surge.sh/assets/codepath.f1b3e41a.svg"
+                alt="codepath logo"
+              />
+            </HashLink> */}
+            <Logo></Logo>
+          </li>
+
+          {/* previous */}
           <li>
             <HashLink smooth to={"/#home"}>
               Home

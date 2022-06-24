@@ -9,7 +9,6 @@ a {
 }
 
 .logo {
-    width: 100px;
     margin-right: 50px;
 }
 
@@ -66,4 +65,8 @@ a {
     text-decoration: none;
     color: var(--bright-green);
     font-weight: 500;
+}
+
+.logo {
+    margin: auto;
 }
