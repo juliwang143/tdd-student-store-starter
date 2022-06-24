@@ -2,14 +2,6 @@ import * as React from "react";
 import "./ShoppingCart.css";
 import CheckoutForm from "../CheckoutForm/CheckoutForm";
 
-// old props
-// isOpen,
-// product,
-// productId,
-// quantity,
-// handleAddItemToCart,
-// handleRemoveItemFromCart,
-
 export default function ShoppingCart({
   isOpen,
   shoppingCart,
@@ -45,16 +37,20 @@ export default function ShoppingCart({
             <i className="material-icons md-48">add_shopping_cart</i>
           </span>
         </h3>
-        <div className="notification">
-          No items added to cart yet. Start shopping now!
-        </div>
-        <CartTable
-          shoppingCart={shoppingCart}
-          products={products}
-          subtotal={subtotal}
-          taxes={taxes}
-          total={total}
-        ></CartTable>
+        {shoppingCart.length === 0 && (
+          <div className="notification">
+            No items added to cart yet. Start shopping now!
+          </div>
+        )}
+        {shoppingCart.length !== 0 && (
+          <CartTable
+            shoppingCart={shoppingCart}
+            products={products}
+            subtotal={subtotal}
+            taxes={taxes}
+            total={total}
+          ></CartTable>
+        )}
 
         <CheckoutForm
           name={name}

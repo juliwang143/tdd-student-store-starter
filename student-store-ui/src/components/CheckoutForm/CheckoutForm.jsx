@@ -46,18 +46,6 @@ export default function CheckoutForm({
           />
         </div>
       </div>
-      <div className="terms-and-conditions-field">
-        <div className="control">
-          <label className="checkbox">
-            <input name="termsAndConditions" type="checkbox" />
-            <span className="label">
-              I agree to the
-              <a href="#terms-and-conditions">terms and conditions</a>
-            </span>
-          </label>
-        </div>
-      </div>
-      <p className="is-danger"></p>
       <div className="field">
         <div className="control">
           <button

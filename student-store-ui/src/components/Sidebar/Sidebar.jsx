@@ -13,7 +13,6 @@ export default function Sidebar({
   subtotal,
   taxes,
   total,
-  // added
   name,
   email,
   handleNameChange,
@@ -35,7 +34,6 @@ export default function Sidebar({
           subtotal={subtotal}
           taxes={taxes}
           total={total}
-          // added
           name={name}
           email={email}
           handleNameChange={handleNameChange}
@@ -44,49 +42,13 @@ export default function Sidebar({
           setEmail={setEmail}
         />
       ) : (
-        <ClosedSidebar
-          isOpen={isOpen}
-          shoppingCart={shoppingCart}
-          products={products}
-          checkoutForm={checkoutForm}
-          handleOnCheckoutFormChange={handleOnCheckoutFormChange}
-          handleOnSubmitCheckoutForm={handleOnSubmitCheckoutForm}
-          handleOnToggle={handleOnToggle}
-          subtotal={subtotal}
-          taxes={taxes}
-          total={total}
-          // added
-          name={name}
-          email={email}
-          handleNameChange={handleNameChange}
-          handleEmailChange={handleEmailChange}
-          setName={setName}
-          setEmail={setEmail}
-        />
+        <ClosedSidebar handleOnToggle={handleOnToggle} />
       )}
     </div>
   );
 }
 
-function ClosedSidebar({
-  isOpen,
-  shoppingCart,
-  products,
-  checkoutForm,
-  handleOnCheckoutFormChange,
-  handleOnSubmitCheckoutForm,
-  handleOnToggle,
-  subtotal,
-  taxes,
-  total,
-  // added
-  name,
-  email,
-  handleNameChange,
-  handleEmailChange,
-  setName,
-  setEmail,
-}) {
+function ClosedSidebar({ handleOnToggle }) {
   return (
     <section className="sidebar closed">
       <div className="wrapper">
@@ -109,7 +71,6 @@ function OpenSidebar({
   subtotal,
   taxes,
   total,
-  // added
   name,
   email,
   handleNameChange,
@@ -138,7 +99,6 @@ function OpenSidebar({
           subtotal={subtotal}
           taxes={taxes}
           total={total}
-          // added
           name={name}
           email={email}
           handleNameChange={handleNameChange}

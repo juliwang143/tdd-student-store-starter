@@ -42,9 +42,6 @@ export default function SubNavbar({
             </button>
           </div>
           <div className="links">
-            {/* <span className="help">
-                        <i className="material-icons">help</i>Help
-                    </span> */}
             <div className="cart">
               <a href="/">
                 My Cart<i className="material-icons">shopping_cart</i>

@@ -1,0 +1,17 @@
+.checkout-form button {
+    margin-top: 10px;
+    padding: 12px 18px;
+    font-size: 18px;
+    cursor: pointer;
+    color: black;
+}
+
+.checkout-form button {
+    margin-top: 10px;
+    padding: 12px 18px;
+    font-size: 18px;
+    cursor: pointer;
+    color: black;
+    background-color: white;
+    border-color: black;
+}

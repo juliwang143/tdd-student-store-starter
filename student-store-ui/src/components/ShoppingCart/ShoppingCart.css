@@ -16,9 +16,7 @@
 }
 
 .CartTable {
-    width: 100%;
-    /* margin: 0 10px; */
-    margin: auto;
+    margin: 1rem;
 }
 
 .shopping-cart .header-row span {
@@ -86,4 +84,12 @@
 
 ul {
     list-style-type: none;
+}
+
+.center {
+    margin-right: 1rem;
+}
+
+.CartTable .label {
+    margin-left: 1rem;
 }
