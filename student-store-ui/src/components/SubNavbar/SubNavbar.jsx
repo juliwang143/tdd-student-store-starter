@@ -7,47 +7,25 @@ export default function SubNavbar({
   searchContent,
   setSearchContent,
   handleSearchChange,
-
   category,
   setCategory,
 }) {
-  // temporarily commented out below stuff
-  // const [searchContent, setSearchContent] = React.useState("");
+  const [type, setType] = React.useState("all");
 
-  // try passing this commented out temporarily
-  // function handleSearchChange(e) {
-  //   // console.log("event:: " + JSON.stringify(e.target.value));
-  //   setSearchContent(e.target.value);
-  // }
+  function handleSearch() {
+    // commented out
+    const tempProducts = products.filter((element) => {
+      return element.name.toLowerCase().includes(searchContent.toLowerCase());
+    });
+    console.log("after filtering: " + tempProducts);
+    setProducts(tempProducts);
+  }
 
-  // handleSearchChange = (e) => {
-  //   console.log("event:: " + JSON.stringify(e.target.value));
-  //   setSearchContent(e.target.value);
-  // };
-
-  // temporarily commented out
-  // function handleSearch() {
-  //   const tempProducts = products.filter((element) => {
-  //     return element.name.toLowerCase().includes(searchContent.toLowerCase());
-  //   });
-
-  //   console.log("after filtering: " + tempProducts);
-  //   setProducts(tempProducts);
-  // }
-
-  // console.log("categorrrry:" + category);
-
-  // category stuff
-  // prev working
-  // function handleCategoryChange(categoryName) {
-  //   setCategory(categoryName);
-  // }
-
-  // not working
-  // function handleCategoryChange(e) {
-  //   setCategory(e.className);
-  //   console.log("e.fawefwa: " + e.className);
-  // }
+  function handleCategoryChange(e) {
+    setCategory(e.target.id);
+    e.target.className = "is-active";
+    setType(e.target.id);
+  }
 
   return (
     <nav className="sub-navbar">
@@ -84,33 +62,31 @@ export default function SubNavbar({
             <i className="material-icons">menu</i>
           </div>
           <ul className="category-menu open">
-            {/* TODO */}
-            {/* <li className="is-active"> */}
-
-            {/* this was working */}
-            {/* <li className="is-active">
-              <button onClick={() => setCategory("all")}>All Categories</button>
-            </li> */}
-            {/* <li className="">
-              <button
-                onClick={() => {
-                  setCategory("clothing");
-                }}
-              >
+            <li className={type === "all" ? "is-active" : ""}>
+              <button id="all" onClick={handleCategoryChange}>
+                All Categories
+              </button>
+            </li>
+            <li className={type === "clothing" ? "is-active" : ""}>
+              <button id="clothing" onClick={handleCategoryChange}>
                 Clothing
               </button>
             </li>
-            <li className="">
-              <button onClick={() => setCategory("food")}>Food</button>
+            <li className={type === "food" ? "is-active" : ""}>
+              <button id="food" onClick={handleCategoryChange}>
+                Food
+              </button>
             </li>
-            <li className="">
-              <button onClick={() => setCategory("accessories")}>
+            <li className={type === "accessories" ? "is-active" : ""}>
+              <button id="accessories" onClick={handleCategoryChange}>
                 Accessories
               </button>
             </li>
-            <li className="">
-              <button onClick={() => setCategory("tech")}>Tech</button>
-            </li> */}
+            <li className={type === "tech" ? "is-active" : ""}>
+              <button id="tech" onClick={handleCategoryChange}>
+                Tech
+              </button>
+            </li>
           </ul>
         </div>
       </div>

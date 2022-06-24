@@ -18,6 +18,13 @@ export default function ShoppingCart({
   handleOnCheckoutFormChange,
   handleOnSubmitCheckoutForm,
   handleOnToggle,
+  // setSubtotal,
+  // setTaxes,
+  // setTotal,
+  //
+  subtotal,
+  taxes,
+  total,
 }) {
   console.log("ewfwaefewfw");
   for (const item in shoppingCart) {
@@ -48,7 +55,17 @@ export default function ShoppingCart({
           No items added to cart yet. Start shopping now!
         </div>
         {/* TODO */}
-        <CartTable shoppingCart={shoppingCart} products={products}></CartTable>
+        <CartTable
+          shoppingCart={shoppingCart}
+          products={products}
+          // setSubtotal={setSubtotal}
+          // setTaxes={setTaxes}
+          // setTotal={setTotal}
+          //
+          subtotal={subtotal}
+          taxes={taxes}
+          total={total}
+        ></CartTable>
 
         <CheckoutForm></CheckoutForm>
         <div className="checkout-success">
@@ -71,7 +88,17 @@ export default function ShoppingCart({
   );
 }
 
-function CartTable({ shoppingCart, products }) {
+function CartTable({
+  shoppingCart,
+  products,
+  // setSubtotal,
+  // setTaxes,
+  // setTotal,
+  //
+  subtotal,
+  taxes,
+  total,
+}) {
   return (
     <div className="CartTable">
       <div className="header">
@@ -91,6 +118,13 @@ function CartTable({ shoppingCart, products }) {
                   productId={element.itemId}
                   quantity={element.quantity}
                   products={products}
+                  // setSubtotal={setSubtotal}
+                  // setTaxes={setTaxes}
+                  // setTotal={setTotal}
+                  //
+                  subtotal={subtotal}
+                  taxes={taxes}
+                  total={total}
                 ></ProductRow>
               </li>
             );
@@ -109,26 +143,41 @@ function CartTable({ shoppingCart, products }) {
           <span className="label">Subtotal</span>
           <span></span>
           <span></span>
-          <span className="center subtotal">$0.99</span>
+          <span className="center subtotal">
+            ${subtotal.current?.toFixed(2)}
+          </span>
         </div>
         <div className="receipt-taxes">
           <span className="label">Taxes and Fees</span>
           <span></span>
           <span></span>
-          <span className="center">$0.09</span>
+          <span className="center">${taxes.current?.toFixed(2)}</span>
         </div>
         <div className="receipt-total">
           <span className="label">Total</span>
           <span></span>
           <span></span>
-          <span className="center total-price">$1.08</span>
+          <span className="center total-price">
+            ${total.current?.toFixed(2)}
+          </span>
         </div>
       </div>
     </div>
   );
 }
 
-function ProductRow({ productId, quantity, products }) {
+function ProductRow({
+  productId,
+  quantity,
+  products,
+  // setSubtotal,
+  // setTaxes,
+  // setTotal,
+  //
+  subtotal,
+  taxes,
+  total,
+}) {
   let productName;
   let productPrice;
   let productSubtotal;
@@ -138,6 +187,17 @@ function ProductRow({ productId, quantity, products }) {
       productName = products[i].name;
       productPrice = products[i].price;
       productSubtotal = quantity * productPrice;
+
+      // setSubtotal((prevSubtotal) => prevSubtotal + productSubtotal);
+      // setTaxes((prevTaxes) => prevTaxes + 0.1 * productSubtotal);
+      // setTotal((prevTotal) => prevTotal + 1.1 * productSubtotal);
+
+      // subtotal.current += productSubtotal;
+      // taxes.current += 0.1 * productSubtotal;
+      // total.current += 1.1 * productSubtotal;
+
+      // console.log("product subtotal: " + productSubtotal);
+
       break;
     }
   }

@@ -114,3 +114,8 @@ input {
     transition: all .2s ease;
     margin: 0px;
 }
+
+.is-active button {
+    /* border-bottom: solid 2px var(--bright-green); */
+    text-decoration: underline;
+}

@@ -10,6 +10,13 @@ export default function Sidebar({
   handleOnCheckoutFormChange,
   handleOnSubmitCheckoutForm,
   handleOnToggle,
+  // setSubtotal,
+  // setTaxes,
+  // setTotal,
+  //
+  subtotal,
+  taxes,
+  total,
 }) {
   return (
     <div>
@@ -22,6 +29,13 @@ export default function Sidebar({
           handleOnCheckoutFormChange={handleOnCheckoutFormChange}
           handleOnSubmitCheckoutForm={handleOnSubmitCheckoutForm}
           handleOnToggle={handleOnToggle}
+          // setSubtotal={setSubtotal}
+          // setTaxes={setTaxes}
+          // setTotal={setTotal}
+          //
+          subtotal={subtotal}
+          taxes={taxes}
+          total={total}
         />
       ) : (
         <ClosedSidebar
@@ -32,6 +46,13 @@ export default function Sidebar({
           handleOnCheckoutFormChange={handleOnCheckoutFormChange}
           handleOnSubmitCheckoutForm={handleOnSubmitCheckoutForm}
           handleOnToggle={handleOnToggle}
+          // setSubtotal={setSubtotal}
+          // setTaxes={setTaxes}
+          // setTotal={setTotal}
+          //
+          subtotal={subtotal}
+          taxes={taxes}
+          total={total}
         />
       )}
     </div>
@@ -46,6 +67,13 @@ function ClosedSidebar({
   handleOnCheckoutFormChange,
   handleOnSubmitCheckoutForm,
   handleOnToggle,
+  // setSubtotal,
+  // setTaxes,
+  // setTotal,
+  //
+  subtotal,
+  taxes,
+  total,
 }) {
   return (
     <section className="sidebar closed">
@@ -66,6 +94,13 @@ function OpenSidebar({
   handleOnCheckoutFormChange,
   handleOnSubmitCheckoutForm,
   handleOnToggle,
+  // setSubtotal,
+  // setTaxes,
+  // setTotal,
+  //
+  subtotal,
+  taxes,
+  total,
 }) {
   return (
     <section className="sidebar open">
@@ -85,6 +120,13 @@ function OpenSidebar({
           handleOnCheckoutFormChange={handleOnCheckoutFormChange}
           handleOnSubmitCheckoutForm={handleOnSubmitCheckoutForm}
           handleOnToggle={handleOnToggle}
+          // setSubtotal={setSubtotal}
+          // setTaxes={setTaxes}
+          // setTotal={setTotal}
+          //
+          subtotal={subtotal}
+          taxes={taxes}
+          total={total}
         ></ShoppingCart>
       </div>
     </section>

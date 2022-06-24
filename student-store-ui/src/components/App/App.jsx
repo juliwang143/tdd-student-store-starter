@@ -28,15 +28,22 @@ export default function App() {
   const [isOpen, setIsOpen] = React.useState(false);
   const [shoppingCart, setShoppingCart] = React.useState([]);
   const [checkoutForm, setCheckoutForm] = React.useState("");
-  const [category, setCategory] = React.useState("");
+  const [category, setCategory] = React.useState("all");
 
   // added
   const [searchContent, setSearchContent] = React.useState("");
 
-  console.log(shoppingCart);
+  // const [subtotal, setSubtotal] = React.useState(0);
+  // const [taxes, setTaxes] = React.useState(0);
+  // const [total, setTotal] = React.useState(0);
+
+  const subtotal = React.useRef(0);
+  const taxes = React.useRef(0);
+  const total = React.useRef(0);
+
+  // console.log(shoppingCart);
 
   function handleSearchChange(e) {
-    // console.log("event:: " + JSON.stringify(e.target.value));
     setSearchContent(e.target.value);
   }
 
@@ -48,6 +55,19 @@ export default function App() {
 
     console.log("after filtering: " + tempProducts);
     setProducts(tempProducts);
+  }
+
+  // added for subtotal
+  function getProduct(productId) {
+    for (let i = 0; i < products.length; i++) {
+      if (products[i].id === productId) {
+        let productPrice = products[i].price;
+
+        return { price: productPrice };
+      }
+    }
+
+    return undefined;
   }
 
   // handler functions
@@ -75,6 +95,13 @@ export default function App() {
     let newItem = { itemId: productId, quantity: 1 };
     const newShoppingCart = [...shoppingCart, newItem];
     setShoppingCart(newShoppingCart);
+
+    // added for subtotal, etc.
+    // TODO this is delayed??? because of set state right
+    const product = getProduct(productId);
+    subtotal.current += product.price;
+    taxes.current += 0.1 * product.price;
+    total.current += 1.1 * product.price;
   }
 
   function handleRemoveItemFromCart(productId) {
@@ -104,24 +131,92 @@ export default function App() {
   // TODO
   function handleOnSubmitCheckoutForm() {}
 
+  // React.useEffect(() => {
+  //   // added and the search content in dependencies
+  //   console.log("in use effect");
+
+  //   // Fetching true
+  //   setIsFetching(true);
+
+  //   axios.get("https://codepath-store-api.herokuapp.com/store").then(
+  //     // Fetching false
+  //     function (response) {
+  //       const responseProducts = response.data.products;
+  //       if (category === "all") {
+  //         setProducts(responseProducts);
+  //       } else {
+  //         const tempProducts = products.filter((element) => {
+  //           return element.category === category;
+  //         });
+  //         setProducts(tempProducts);
+  //         console.log("tempProducts:" + tempProducts);
+  //       }
+  //       setIsFetching(false);
+
+  //       // added this
+  //       // handleSearch();
+  //     }
+  //   );
+  // }, [searchContent, subtotal, category]);
+
+  // React.useEffect(() => {
+  //   // added and the search content in dependencies
+  //   console.log("in use effect");
+
+  //   // Fetching true
+  //   setIsFetching(true);
+
+  //   axios.get("https://codepath-store-api.herokuapp.com/store").then(
+  //     // Fetching false
+  //     function (response) {
+  //       const responseProducts = response.data.products;
+  //       let categoryProducts;
+  //       if (category === "all") {
+  //         categoryProducts = responseProducts;
+  //       } else {
+  //         const tempProducts = products.filter((element) => {
+  //           return element.category === category;
+  //         });
+  //         categoryProducts = tempProducts;
+  //       }
+
+  //       const searchProducts = categoryProducts.filter((element) => {
+  //         return element.name
+  //           .toLowerCase()
+  //           .includes(searchContent.toLowerCase());
+  //       });
+  //       setProducts(searchProducts);
+
+  //       setIsFetching(false);
+
+  //       console.log("category! : " + category);
+  //       console.log("search: " + searchContent);
+
+  //       console.log("categoryProducts " + categoryProducts);
+  //       console.log("searchProducts " + searchProducts);
+
+  //       // added this
+  //       // handleSearch();
+  //     }
+  //   );
+  // }, [searchContent, subtotal, category]);
+
   React.useEffect(() => {
     // added and the search content in dependencies
     console.log("in use effect");
 
-    // Fetching true
     setIsFetching(true);
 
-    axios.get("https://codepath-store-api.herokuapp.com/store").then(
-      // Fetching false
-      function (response) {
-        setProducts(response.data.products);
+    axios
+      .get("https://codepath-store-api.herokuapp.com/store")
+      .then(function (response) {
+        const responseProducts = response.data.products;
+        setProducts(responseProducts);
         setIsFetching(false);
-
         // added this
         // handleSearch();
-      }
-    );
-  }, [searchContent]);
+      });
+  }, [subtotal]);
 
   return (
     <div className="app">
@@ -136,9 +231,10 @@ export default function App() {
             handleOnCheckoutFormChange={handleOnCheckoutFormChange}
             handleOnSubmitCheckoutForm={handleOnSubmitCheckoutForm}
             handleOnToggle={handleOnToggle}
+            subtotal={subtotal}
+            taxes={taxes}
+            total={total}
           />
-          {/* <SubNavbar></SubNavbar> */}
-
           <Routes>
             <Route
               exact

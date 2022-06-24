@@ -36,6 +36,8 @@ export default function Home({
         products={products}
         handleAddItemToCart={handleAddItemToCart}
         handleRemoveItemFromCart={handleRemoveItemFromCart}
+        searchContent={searchContent}
+        category={category}
       ></ProductGrid>
     </div>
   );
