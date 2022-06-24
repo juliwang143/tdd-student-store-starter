@@ -288,15 +288,15 @@ The following specifications were met on the Express backend and the React front
 
 - Did the topics discussed in your labs prepare you to complete the assignment? Be specific, which features in your weekly assignment did you feel unprepared to complete?
 
-Add your response here
+I felt like they provided me a good foundation to start with, but I believe more in depth material on useEffect and the component lifecylce would have helped me with many of the issues I struggled with. I spent most of my time struggling with those concepts.
 
 - If you had more time, what would you have done differently? Would you have added additional features? Changed the way your project responded to a particular event, etc.
 
-Add your response here
+I would have added an ability to rate a product by filling out the stores. I also would have reformmated much of the logic. As I am not well experienced with React, I didn't really initially understand where to put specific variables, such as putting the state in App.jsx, which lead to later problems and reformatting.
 
 - Reflect on your project demo, what went well? Were there things that maybe didn't go as planned? Did you notice something that your peer did that you would like to try next time?
 
-Add your response here
+I would like to focus more on styling, along with playing around with a more creative layout.
 
 ### Open-source libraries used
 
