@@ -19,10 +19,23 @@ export default function ProductDetail({
 
   const [notFound, setNotFound] = React.useState(false);
 
+  // React.useEffect(() => {
+  //   setIsFetching(true);
+  //   axios
+  //     .get(`https://codepath-store-api.herokuapp.com/store/${productId}`)
+  //     .then(function (response) {
+  //       setProduct(response.data.product);
+  //       setIsFetching(false);
+  //     })
+  //     .catch((error) => {
+  //       setNotFound(true);
+  //     });
+  // }, []);
+
   React.useEffect(() => {
     setIsFetching(true);
     axios
-      .get(`https://codepath-store-api.herokuapp.com/store/${productId}`)
+      .get(`http://localhost:3001/store/${productId}`)
       .then(function (response) {
         setProduct(response.data.product);
         setIsFetching(false);
