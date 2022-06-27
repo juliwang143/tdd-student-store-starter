@@ -82,8 +82,6 @@ function CartTable({ shoppingCart, products, subtotal, taxes, total }) {
         </div>
         <ul>
           {shoppingCart.map((element) => {
-            console.log("awefawefawefawefawef");
-            console.log(shoppingCart);
             return (
               <li key={element.itemId}>
                 <ProductRow

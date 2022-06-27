@@ -24,14 +24,12 @@ export default function App() {
   const [email, setEmail] = React.useState("");
 
   const [checkoutStatus, setCheckoutStatus] = React.useState("");
-  // const checkoutStatus = React.useRef("");
 
   const subtotal = React.useRef(0);
   const taxes = React.useRef(0);
   const total = React.useRef(0);
 
   function handleNameChange(e) {
-    console.log(e.target.value);
     setName(e.target.value);
   }
 
@@ -124,16 +122,9 @@ export default function App() {
     }
   }
 
-  // TODO
   function handleOnCheckoutFormChange() {}
 
   function handleOnSubmitCheckoutForm() {
-    // TODO if shopping cart is empty
-    // if (shoppingCart.length === 0) {
-    //   setCheckoutStatus("error: no items in shopping cart");
-    // }
-
-    console.log("!!!");
     let postRequest = {
       user: { name: name, email: email },
       shoppingCart: shoppingCart,
@@ -141,21 +132,16 @@ export default function App() {
     axios
       .post("https://codepath-store-api.herokuapp.com/store", postRequest)
       .then((response) => {
-        console.log(response);
         setCheckoutStatus("success");
-        // checkoutStatus.current = "success";
       })
       .catch((error) => {
         setCheckoutStatus("error");
-        // checkoutStatus.current = "error: " + error.response;
       });
 
     setShoppingCart([]);
     setCheckoutForm({});
     setName("");
     setEmail("");
-
-    console.log("just submitted");
   }
 
   React.useEffect(() => {
@@ -213,7 +199,6 @@ export default function App() {
                   handleSearchChange={handleSearchChange}
                   category={category}
                   setCategory={setCategory}
-                  // added
                   handleOnToggle={handleOnToggle}
                 />
               }
@@ -232,7 +217,6 @@ export default function App() {
                   handleSearchChange={handleSearchChange}
                   category={category}
                   setCategory={setCategory}
-                  // added
                   handleOnToggle={handleOnToggle}
                 />
               }
@@ -251,7 +235,6 @@ export default function App() {
                 />
               }
             />
-            {/* <Route component={NotFound} /> */}
             <Route path="*" element={<NotFound />} />
           </Routes>
           <About></About>

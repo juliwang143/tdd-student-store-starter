@@ -17,7 +17,6 @@ export default function ProductDetail({
   const [product, setProduct] = React.useState({});
   let { productId } = useParams();
 
-  // added
   const [notFound, setNotFound] = React.useState(false);
 
   React.useEffect(() => {
@@ -25,13 +24,10 @@ export default function ProductDetail({
     axios
       .get(`https://codepath-store-api.herokuapp.com/store/${productId}`)
       .then(function (response) {
-        console.log("rearweraw: " + response.data);
-
         setProduct(response.data.product);
         setIsFetching(false);
       })
       .catch((error) => {
-        console.log("oops", error);
         setNotFound(true);
       });
   }, []);
@@ -43,7 +39,6 @@ export default function ProductDetail({
       <div className="product-detail-wrapper">
         <div className="spacer"></div>
         <Hero></Hero>
-        {/* <SubNavbar></SubNavbar> */}
         <div className="product-detail">
           {isFetching ? (
             <h1 className="loading">Loading</h1>

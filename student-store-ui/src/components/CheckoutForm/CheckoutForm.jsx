@@ -15,10 +15,6 @@ export default function CheckoutForm({
   setCheckoutStatus,
   handleCheckoutStatusChange,
 }) {
-  // let tempCheckoutStatus = checkoutStatus.current;
-  // // checkoutStatus.current = "";
-  // console.log("temp check out status: " + tempCheckoutStatus);
-
   return (
     <div className="checkout-form">
       <h3 className="">
@@ -63,21 +59,6 @@ export default function CheckoutForm({
           </button>
         </div>
       </div>
-      {/* <div className="success">
-        <h3>
-          Checkout Info
-          <span className="icon button">
-            <i className="material-icons md-48">fact_check</i>
-          </span>
-        </h3>
-        <div className="content">
-          <p>
-            A confirmation email will be sent to you so that you can confirm
-            this order. Once you have confirmed the order, it will be delivered
-            to your dorm room.
-          </p>
-        </div>
-      </div> */}
 
       {checkoutStatus === "success" && (
         <div className="success">
