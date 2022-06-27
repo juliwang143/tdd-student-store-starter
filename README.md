@@ -244,13 +244,13 @@ The following specifications were met on the Express backend and the React front
 **Server** - Create an Express server
 
 - [ ] Wire up the appropriate middleware and error handlers in the `app.js` file
-- [ ] Create a single `GET` request handler at the `/` endpoint. It should respond to all `GET` requests with a JSON object and a `200` status code. The JSON response should contain a single key of `ping` that stores the string value: `pong`. For example: `{ "ping": "pong" }`.
-- [ ] Have a `server.js` file that starts the app by listening on port `3001`.
+- [x] Create a single `GET` request handler at the `/` endpoint. It should respond to all `GET` requests with a JSON object and a `200` status code. The JSON response should contain a single key of `ping` that stores the string value: `pong`. For example: `{ "ping": "pong" }`.
+- [x] Have a `server.js` file that starts the app by listening on port `3001`.
 
 **Models** - The API should use a `Store` model that handles the following
 
-- [ ] List all products currently in the `db.json` file
-- [ ] Fetch a single product by its id
+- [x] List all products currently in the `db.json` file
+- [x] Fetch a single product by its id
 - [ ] Create a purchase order
 
 **Routes** - The API should contain a route mounted at the `/store` endpoint
