@@ -63,6 +63,10 @@ export default function CheckoutForm({
       {checkoutStatus === "success" && (
         <div className="success">
           <h3>Success! </h3>
+          <h5>Receipt:</h5>
+          <span>
+            Showing receipt for {name} available at {email}:{" "}
+          </span>
         </div>
       )}
 

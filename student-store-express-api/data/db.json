@@ -145,5 +145,29 @@
       "price": 999.99
     }
   ],
-  "purchases": []
+  "purchases": [
+    {
+      "purchase": {
+        "id": 1,
+        "name": "Julia",
+        "email": "julia@fb.com",
+        "order": [
+          {
+            "itemId": 2,
+            "quantity": 5
+          },
+          {
+            "itemId": 3,
+            "quantity": 6
+          },
+          {
+            "itemId": 2,
+            "quantity": 5
+          }
+        ],
+        "total": "35.82",
+        "createdAt": "6/28/2022, 10:54:17 AM"
+      }
+    }
+  ]
 }

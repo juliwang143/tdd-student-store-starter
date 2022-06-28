@@ -64,6 +64,7 @@ export default function ShoppingCart({
           checkoutStatus={checkoutStatus}
           setCheckoutStatus={setCheckoutStatus}
           handleCheckoutStatusChange={handleCheckoutStatusChange}
+          shoppingCart={shoppingCart}
         ></CheckoutForm>
       </div>
     </div>
