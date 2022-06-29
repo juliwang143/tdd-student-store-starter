@@ -149,20 +149,20 @@
     {
       "purchase": {
         "id": 1,
-        "name": "Julia",
-        "email": "",
+        "name": "serg",
+        "email": "g",
         "order": [
           {
             "itemId": 3,
-            "quantity": 4
+            "quantity": 2
           }
         ],
-        "total": "13.01",
-        "createdAt": "6/29/2022, 10:50:14 AM",
+        "total": "6.50",
+        "createdAt": "6/29/2022, 3:07:15 PM",
         "receipt": [
           {
             "itemId": 3,
-            "quantity": 4,
+            "quantity": 2,
             "name": "Cinnamon Rolls",
             "price": 2.99
           }
@@ -172,20 +172,20 @@
     {
       "purchase": {
         "id": 2,
-        "name": "fawefawef",
-        "email": "fff",
+        "name": "sdfghjk",
+        "email": "j",
         "order": [
           {
             "itemId": 4,
-            "quantity": 5
+            "quantity": 4
           }
         ],
-        "total": "17.67",
-        "createdAt": "6/29/2022, 10:51:40 AM",
+        "total": "14.14",
+        "createdAt": "6/29/2022, 4:20:51 PM",
         "receipt": [
           {
             "itemId": 4,
-            "quantity": 5,
+            "quantity": 4,
             "name": "Coconut Water",
             "price": 3.25
           }
@@ -195,46 +195,54 @@
     {
       "purchase": {
         "id": 3,
-        "name": "",
-        "email": "",
+        "name": "julia",
+        "email": "vvvvvvv",
         "order": [
           {
-            "itemId": 5,
-            "quantity": 3
+            "itemId": 3,
+            "quantity": 1
+          },
+          {
+            "itemId": 9,
+            "quantity": 1
+          },
+          {
+            "itemId": 10,
+            "quantity": 1
+          },
+          {
+            "itemId": 8,
+            "quantity": 1
           }
         ],
-        "total": "24.47",
-        "createdAt": "6/29/2022, 10:51:46 AM",
+        "total": "68.47",
+        "createdAt": "6/29/2022, 4:21:13 PM",
         "receipt": [
           {
-            "itemId": 5,
-            "quantity": 3,
-            "name": "Fruit Medley",
-            "price": 7.5
+            "itemId": 3,
+            "quantity": 1,
+            "name": "Cinnamon Rolls",
+            "price": 2.99
+          },
+          {
+            "itemId": 9,
+            "quantity": 1,
+            "name": "Pullover Sweater",
+            "price": 4.99
+          },
+          {
+            "itemId": 10,
+            "quantity": 1,
+            "name": "Alpaca Wool Scarf",
+            "price": 34.99
+          },
+          {
+            "itemId": 8,
+            "quantity": 1,
+            "name": "Knitted Beanie",
+            "price": 19.99
           }
         ]
-      }
-    },
-    {
-      "purchase": {
-        "id": 4,
-        "name": "",
-        "email": "",
-        "order": [],
-        "total": "0.00",
-        "createdAt": "6/29/2022, 10:52:39 AM",
-        "receipt": []
-      }
-    },
-    {
-      "purchase": {
-        "id": 5,
-        "name": "",
-        "email": "",
-        "order": [],
-        "total": "0.00",
-        "createdAt": "6/29/2022, 10:54:27 AM",
-        "receipt": []
       }
     }
   ]

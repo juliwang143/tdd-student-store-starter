@@ -18,9 +18,6 @@ export default function CheckoutForm({
   setReceipt,
   error,
 }) {
-  console.log("error");
-  console.log(error);
-
   return (
     <div className="checkout-form">
       <h3 className="">

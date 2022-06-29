@@ -28,7 +28,7 @@
 
 .order-row {
     flex: 0.3;
-    margin-left: 9rem;
+    margin-left: 10rem;
 }
 
 .order-links {
@@ -44,6 +44,29 @@
 }
 
 /* #order-header {
-    background-color: lavender;
-    width: 80%;
+    margin-left: 6rem;
 } */
+
+#order-receipt-row {
+    margin-left: 6rem;
+}
+
+.receipt-div {
+    display: flex;
+    width: 80%;
+    margin-left: 10rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.receipt-name {
+    flex: 0.4;
+}
+
+.receipt-quantity {
+    flex: 0.45;
+}
+
+.spacer {
+    margin-top: 20px;
+}

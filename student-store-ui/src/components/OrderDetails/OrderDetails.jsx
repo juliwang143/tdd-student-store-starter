@@ -36,7 +36,12 @@ export default function OrderDetails({ isFetching, setIsFetching }) {
         {isFetching ? (
           <h1 className="loading">Loading</h1>
         ) : (
-          <OrderDetail order={order} orderId={orderId} showDescription={true} />
+          <OrderDetail
+            className="order-detail-component"
+            order={order}
+            orderId={orderId}
+            showDescription={true}
+          />
         )}
       </div>
     </div>

@@ -4,7 +4,6 @@ import "./ProductCard.css";
 import { Routes, Route, Link, useParams } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 
-// props: product, productId, quantity, handleAddItemToCart, handleAddItemFromCart, showDescription
 export default function ProductCard({
   product,
   productId,
