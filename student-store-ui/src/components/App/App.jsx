@@ -8,6 +8,7 @@ import About from "../About/About";
 import Contact from "../Contact/Contact";
 import NotFound from "../NotFound/NotFound";
 import Orders from "../Orders/Orders";
+import OrderDetails from "../OrderDetails/OrderDetails";
 
 import axios from "axios";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
@@ -259,18 +260,16 @@ export default function App() {
               }
             />
             {/* TODO added */}
-            {/* <Route
+            <Route
               exact
               path="/orders/:orderId"
               element={
-                <ProductDetail
+                <OrderDetails
                   setIsFetching={setIsFetching}
                   isFetching={isFetching}
-                  handleAddItemToCart={handleAddItemToCart}
-                  handleRemoveItemFromCart={handleRemoveItemFromCart}
                 />
               }
-            /> */}
+            />
             <Route path="*" element={<NotFound />} />
           </Routes>
           <About></About>

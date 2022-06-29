@@ -5,9 +5,6 @@ import OrderDetail from "../OrderDetail/OrderDetail";
 import "./Orders.css";
 
 export default function Orders({ orders, setOrders }) {
-  console.log("in order component");
-  console.log(orders);
-
   return (
     <div id="orders" className="orders">
       <div className="spacer"></div>
@@ -27,6 +24,7 @@ export default function Orders({ orders, setOrders }) {
                 return (
                   <OrderDetail
                     order={element.purchase}
+                    orderId={element.purchase.id}
                     key={element.purchase.id}
                   ></OrderDetail>
                 );
