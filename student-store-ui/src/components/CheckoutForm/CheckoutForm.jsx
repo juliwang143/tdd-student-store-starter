@@ -71,7 +71,8 @@ export default function CheckoutForm({
           <h3>Success! </h3>
           <h5>Receipt:</h5>
           <span>
-            Showing receipt for {receipt.name} available at {receipt.email}:
+            Showing receipt for {receipt.name} available at {receipt.email} for
+            a total of ${receipt.total}:
           </span>
           {receipt.receipt
             ? receipt.receipt.map((element) => {
@@ -88,7 +89,7 @@ export default function CheckoutForm({
 
       {(checkoutStatus === "error" || error) && (
         <div className="error">
-          <h3>{checkoutStatus}</h3>
+          <h3>Error</h3>
         </div>
       )}
     </div>

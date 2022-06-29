@@ -23,7 +23,7 @@ class Store {
         const { user, shoppingCart } = purchaseOrder;
 
         // if either shopping cart or user field is missing
-        if (!shoppingCart || !user) {
+        if (!shoppingCart || !user || shoppingCart === [] || !user.name || user.name === "" || !user.email || user.email === "") {
             throw new BadRequestError('Shopping cart or user field is missing')
         }
 

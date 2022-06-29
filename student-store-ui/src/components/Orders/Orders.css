@@ -8,7 +8,6 @@ h1 {
 
 .header-row {
     display: flex;
-    /* flex-direction: column;         */
     flex-direction: row;
     background: var(--pure-white);
     border: solid 1px var(--border-color);
@@ -43,4 +42,19 @@ h1 {
 .order-card {
     width: 100%;
     height: 50px;
+}
+
+#order-column-1 {
+    flex: 0.3;
+    margin-left: 20rem;
+}
+
+#order-column-2 {
+    flex: 0.3;
+    margin-left: 5rem;
+}
+
+#all-orders-header {
+    margin: 2rem;
+    font-weight: bold;
 }

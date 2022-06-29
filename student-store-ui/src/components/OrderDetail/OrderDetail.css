@@ -30,3 +30,20 @@
     flex: 0.3;
     margin-left: 9rem;
 }
+
+.order-links {
+    width: 100%;
+}
+
+.column-header .header {
+    display: flex;
+    flex-direction: column;
+    border: solid 1px var(--border-color);
+    border-radius: 4px;
+    width: 100%;
+}
+
+/* #order-header {
+    background-color: lavender;
+    width: 80%;
+} */

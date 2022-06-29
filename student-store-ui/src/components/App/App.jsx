@@ -9,8 +9,8 @@ import Contact from "../Contact/Contact";
 import NotFound from "../NotFound/NotFound";
 import Orders from "../Orders/Orders";
 import OrderDetails from "../OrderDetails/OrderDetails";
-
 import axios from "axios";
+
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 
 export default function App() {
@@ -31,7 +31,6 @@ export default function App() {
   const taxes = React.useRef(0);
   const total = React.useRef(0);
 
-  const [orders, setOrders] = React.useState([]);
   const [receipt, setReceipt] = React.useState({});
 
   function handleNameChange(e) {
@@ -162,16 +161,6 @@ export default function App() {
       .catch(function (getError) {
         setError(getError);
       });
-
-    // added for orders
-    axios
-      .get("http://localhost:3001/store/orders")
-      .then(function (response) {
-        setOrders(response.data.orders);
-      })
-      .catch(function (getError) {
-        setError(true);
-      });
   }, [subtotal]);
 
   return (
@@ -245,7 +234,7 @@ export default function App() {
             <Route
               exact
               path="/Orders"
-              element={<Orders orders={orders} setOrders={setOrders} />}
+              element={<Orders setIsFetching={setIsFetching} />}
             />
             <Route
               exact
