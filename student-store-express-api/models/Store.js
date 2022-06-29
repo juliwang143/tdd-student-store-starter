@@ -49,7 +49,11 @@ class Store {
         let id = storage.get('purchases').value().length + 1;
         total += 0.0875 * total;
         let createdAt = new Date().toLocaleString();
-        const purchaseObject = {id: id, name: name, email: email, order: shoppingCart, total: total?.toFixed(2), createdAt: createdAt};
+
+        const receipt = shoppingCart.map((element) => {
+            return {itemId: element.itemId, quantity: element.quantity, name: this.product(element.itemId).name, price: this.product(element.itemId).price};
+        });
+        const purchaseObject = {id: id, name: name, email: email, order: shoppingCart, total: total?.toFixed(2), createdAt: createdAt, receipt: receipt};
         storage.get('purchases').push({purchase: purchaseObject}).write();
         return purchaseObject;
     }

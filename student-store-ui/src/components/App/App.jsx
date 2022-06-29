@@ -7,6 +7,7 @@ import ProductDetail from "../ProductDetail/ProductDetail";
 import About from "../About/About";
 import Contact from "../Contact/Contact";
 import NotFound from "../NotFound/NotFound";
+import Orders from "../Orders/Orders";
 
 import axios from "axios";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
@@ -14,7 +15,7 @@ import { Routes, Route, BrowserRouter } from "react-router-dom";
 export default function App() {
   const [products, setProducts] = React.useState([]);
   const [isFetching, setIsFetching] = React.useState(false);
-  const [error, setError] = React.useState("");
+  const [error, setError] = React.useState(false);
   const [isOpen, setIsOpen] = React.useState(false);
   const [shoppingCart, setShoppingCart] = React.useState([]);
   const [checkoutForm, setCheckoutForm] = React.useState({});
@@ -28,6 +29,9 @@ export default function App() {
   const subtotal = React.useRef(0);
   const taxes = React.useRef(0);
   const total = React.useRef(0);
+
+  const [orders, setOrders] = React.useState([]);
+  const [receipt, setReceipt] = React.useState({});
 
   function handleNameChange(e) {
     setName(e.target.value);
@@ -130,9 +134,10 @@ export default function App() {
       shoppingCart: shoppingCart,
     };
     axios
-      .post("https://codepath-store-api.herokuapp.com/store", postRequest)
+      .post("http://localhost:3001/store", postRequest)
       .then((response) => {
         setCheckoutStatus("success");
+        setReceipt(response.data.purchase);
       })
       .catch((error) => {
         setCheckoutStatus("error");
@@ -155,6 +160,16 @@ export default function App() {
       })
       .catch(function (getError) {
         setError(getError);
+      });
+
+    // added for orders
+    axios
+      .get("http://localhost:3001/store/orders")
+      .then(function (response) {
+        setOrders(response.data.orders);
+      })
+      .catch(function (getError) {
+        setError(true);
       });
   }, [subtotal]);
 
@@ -183,6 +198,9 @@ export default function App() {
             checkoutStatus={checkoutStatus}
             setCheckoutStatus={setCheckoutStatus}
             handleCheckoutStatusChange={handleCheckoutStatusChange}
+            receipt={receipt}
+            setReceipt={receipt}
+            error={error}
           />
           <Routes>
             <Route
@@ -225,6 +243,11 @@ export default function App() {
             <Route exact path="/#contact" element={<Contact />} />
             <Route
               exact
+              path="/Orders"
+              element={<Orders orders={orders} setOrders={setOrders} />}
+            />
+            <Route
+              exact
               path="/products/:productId"
               element={
                 <ProductDetail
@@ -235,6 +258,19 @@ export default function App() {
                 />
               }
             />
+            {/* TODO added */}
+            {/* <Route
+              exact
+              path="/orders/:orderId"
+              element={
+                <ProductDetail
+                  setIsFetching={setIsFetching}
+                  isFetching={isFetching}
+                  handleAddItemToCart={handleAddItemToCart}
+                  handleRemoveItemFromCart={handleRemoveItemFromCart}
+                />
+              }
+            /> */}
             <Route path="*" element={<NotFound />} />
           </Routes>
           <About></About>

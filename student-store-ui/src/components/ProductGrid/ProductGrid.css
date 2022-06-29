@@ -5,6 +5,10 @@
     justify-content: center;
 }
 
+#row {
+    flex-direction: row;
+}
+
 .product-grid .product-card {
     height: auto;
     width: 250px;

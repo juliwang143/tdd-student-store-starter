@@ -26,7 +26,7 @@ export default function ProductGrid({
     <div className="product-grid">
       <div className="content">
         <h3>Best Selling Products</h3>
-        <div className="grid">
+        <div className="grid" id="row">
           {searchProducts.map((element) => {
             return (
               <ProductCard

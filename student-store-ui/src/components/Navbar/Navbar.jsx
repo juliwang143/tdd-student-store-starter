@@ -3,6 +3,7 @@ import "./Navbar.css";
 import "../Sidebar/Sidebar";
 
 import Logo from "../Logo/Logo";
+import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 
 export default function Navbar() {
@@ -32,6 +33,9 @@ export default function Navbar() {
             <HashLink smooth to={"/#contact"}>
               Contact Us
             </HashLink>
+          </li>
+          <li>
+            <Link to={"/orders"}>Orders</Link>
           </li>
         </ul>
       </div>

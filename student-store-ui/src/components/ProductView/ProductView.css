@@ -1,14 +1,7 @@
 h1 {
-    font-size: 1rem;
-    /* align-items: center; */
-    
+    font-size: 1rem;    
 }
 
 #product-id {
     display: flex;
 }
-
-/* .product-vivew {
-    border: 0.5rem;
-    border-color: blanchedalmond;
-} */

@@ -22,6 +22,9 @@ export default function Sidebar({
   checkoutStatus,
   setCheckoutStatus,
   handleCheckoutStatusChange,
+  receipt,
+  setReceipt,
+  error,
 }) {
   return (
     <div>
@@ -46,6 +49,9 @@ export default function Sidebar({
           checkoutStatus={checkoutStatus}
           setCheckoutStatus={setCheckoutStatus}
           handleCheckoutStatusChange={handleCheckoutStatusChange}
+          receipt={receipt}
+          setReceipt={setReceipt}
+          error={error}
         />
       ) : (
         <ClosedSidebar handleOnToggle={handleOnToggle} />
@@ -86,6 +92,9 @@ function OpenSidebar({
   checkoutStatus,
   setCheckoutStatus,
   handleCheckoutStatusChange,
+  receipt,
+  setReceipt,
+  error,
 }) {
   return (
     <section className="sidebar open">
@@ -117,6 +126,9 @@ function OpenSidebar({
           checkoutStatus={checkoutStatus}
           setCheckoutStatus={setCheckoutStatus}
           handleCheckoutStatusChange={handleCheckoutStatusChange}
+          receipt={receipt}
+          setReceipt={setReceipt}
+          error={error}
         ></ShoppingCart>
       </div>
     </section>

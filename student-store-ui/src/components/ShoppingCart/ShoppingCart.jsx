@@ -22,6 +22,9 @@ export default function ShoppingCart({
   checkoutStatus,
   setCheckoutStatus,
   handleCheckoutStatusChange,
+  receipt,
+  setReceipt,
+  error,
 }) {
   function handleNameChange(event) {
     setName(event.target.value);
@@ -65,6 +68,9 @@ export default function ShoppingCart({
           setCheckoutStatus={setCheckoutStatus}
           handleCheckoutStatusChange={handleCheckoutStatusChange}
           shoppingCart={shoppingCart}
+          receipt={receipt}
+          setReceipt={setReceipt}
+          error={error}
         ></CheckoutForm>
       </div>
     </div>

@@ -15,3 +15,12 @@
     background-color: white;
     border-color: black;
 }
+
+.checkout-form .success {
+    display: flex;
+    flex-direction: column;
+}
+
+.success h5 {
+    margin: 0px;
+}

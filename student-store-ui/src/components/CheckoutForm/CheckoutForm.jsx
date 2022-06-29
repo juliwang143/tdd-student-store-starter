@@ -14,7 +14,13 @@ export default function CheckoutForm({
   checkoutStatus,
   setCheckoutStatus,
   handleCheckoutStatusChange,
+  receipt,
+  setReceipt,
+  error,
 }) {
+  console.log("error");
+  console.log(error);
+
   return (
     <div className="checkout-form">
       <h3 className="">
@@ -65,12 +71,22 @@ export default function CheckoutForm({
           <h3>Success! </h3>
           <h5>Receipt:</h5>
           <span>
-            Showing receipt for {name} available at {email}:{" "}
+            Showing receipt for {receipt.name} available at {receipt.email}:
           </span>
+          {receipt.receipt
+            ? receipt.receipt.map((element) => {
+                return (
+                  <span key={element.id + element.name} className="receipt-row">
+                    {element.quantity} {element.name}(s) were purchased at a
+                    price of ${element.price}.
+                  </span>
+                );
+              })
+            : null}
         </div>
       )}
 
-      {checkoutStatus === "error" && (
+      {(checkoutStatus === "error" || error) && (
         <div className="error">
           <h3>{checkoutStatus}</h3>
         </div>

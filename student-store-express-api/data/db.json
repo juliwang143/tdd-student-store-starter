@@ -168,6 +168,220 @@
         "total": "35.82",
         "createdAt": "6/28/2022, 10:54:17 AM"
       }
+    },
+    {
+      "purchase": {
+        "id": 2,
+        "name": "f",
+        "email": "",
+        "order": [
+          {
+            "itemId": 3,
+            "quantity": 1
+          }
+        ],
+        "total": "3.25",
+        "createdAt": "6/28/2022, 7:57:18 PM",
+        "receipt": [
+          {
+            "itemId": 3,
+            "quantity": 1,
+            "name": "Cinnamon Rolls",
+            "price": 2.99
+          }
+        ]
+      }
+    },
+    {
+      "purchase": {
+        "id": 3,
+        "name": "awf",
+        "email": "f",
+        "order": [
+          {
+            "itemId": 4,
+            "quantity": 3
+          }
+        ],
+        "total": "10.60",
+        "createdAt": "6/28/2022, 7:57:23 PM",
+        "receipt": [
+          {
+            "itemId": 4,
+            "quantity": 3,
+            "name": "Coconut Water",
+            "price": 3.25
+          }
+        ]
+      }
+    },
+    {
+      "purchase": {
+        "id": 4,
+        "name": "aweff",
+        "email": "fawfwef",
+        "order": [
+          {
+            "itemId": 9,
+            "quantity": 3
+          },
+          {
+            "itemId": 13,
+            "quantity": 1
+          }
+        ],
+        "total": "92.40",
+        "createdAt": "6/28/2022, 7:57:46 PM",
+        "receipt": [
+          {
+            "itemId": 9,
+            "quantity": 3,
+            "name": "Pullover Sweater",
+            "price": 4.99
+          },
+          {
+            "itemId": 13,
+            "quantity": 1,
+            "name": "Copper Bracelet",
+            "price": 70
+          }
+        ]
+      }
+    },
+    {
+      "purchase": {
+        "id": 5,
+        "name": "",
+        "email": "",
+        "order": [
+          {
+            "itemId": 2,
+            "quantity": 1
+          }
+        ],
+        "total": "1.63",
+        "createdAt": "6/28/2022, 8:00:09 PM",
+        "receipt": [
+          {
+            "itemId": 2,
+            "quantity": 1,
+            "name": "Flamin Hot Cheetos",
+            "price": 1.5
+          }
+        ]
+      }
+    },
+    {
+      "purchase": {
+        "id": 6,
+        "name": "",
+        "email": "",
+        "order": [
+          {
+            "itemId": 2,
+            "quantity": 1
+          }
+        ],
+        "total": "1.63",
+        "createdAt": "6/28/2022, 8:01:10 PM",
+        "receipt": [
+          {
+            "itemId": 2,
+            "quantity": 1,
+            "name": "Flamin Hot Cheetos",
+            "price": 1.5
+          }
+        ]
+      }
+    },
+    {
+      "purchase": {
+        "id": 7,
+        "name": "f",
+        "email": "",
+        "order": [
+          {
+            "itemId": 1,
+            "quantity": 1
+          }
+        ],
+        "total": "1.08",
+        "createdAt": "6/28/2022, 8:01:40 PM",
+        "receipt": [
+          {
+            "itemId": 1,
+            "quantity": 1,
+            "name": "Rice Krispies",
+            "price": 0.99
+          }
+        ]
+      }
+    },
+    {
+      "purchase": {
+        "id": 8,
+        "name": "Julia Wang",
+        "email": "julia@fb.com",
+        "order": [
+          {
+            "itemId": 2,
+            "quantity": 3
+          }
+        ],
+        "total": "4.89",
+        "createdAt": "6/28/2022, 9:41:17 PM",
+        "receipt": [
+          {
+            "itemId": 2,
+            "quantity": 3,
+            "name": "Flamin Hot Cheetos",
+            "price": 1.5
+          }
+        ]
+      }
+    },
+    {
+      "purchase": {
+        "id": 9,
+        "name": "Jess",
+        "email": "afawefef",
+        "order": [
+          {
+            "itemId": 1,
+            "quantity": 1
+          },
+          {
+            "itemId": 7,
+            "quantity": 1
+          },
+          {
+            "itemId": 8,
+            "quantity": 1
+          }
+        ],
+        "total": "28.24",
+        "createdAt": "6/28/2022, 9:41:48 PM",
+        "receipt": [
+          {
+            "itemId": 1,
+            "quantity": 1,
+            "name": "Rice Krispies",
+            "price": 0.99
+          },
+          {
+            "itemId": 7,
+            "quantity": 1,
+            "name": "Striped Socks",
+            "price": 4.99
+          },
+          {
+            "itemId": 8,
+            "quantity": 1,
+            "name": "Knitted Beanie",
+            "price": 19.99
+          }
+        ]
+      }
     }
   ]
 }
