@@ -146,5 +146,51 @@
     }
   ],
   "purchases": [
+    {
+      "purchase": {
+        "id": 1,
+        "name": "Julia",
+        "email": "julia@fb.com",
+        "order": [
+          {
+            "itemId": 2,
+            "quantity": 2
+          }
+        ],
+        "total": "3.26",
+        "createdAt": "6/30/2022, 9:35:41 AM",
+        "receipt": [
+          {
+            "itemId": 2,
+            "quantity": 2,
+            "name": "Flamin Hot Cheetos",
+            "price": 1.5
+          }
+        ]
+      }
+    },
+    {
+      "purchase": {
+        "id": 2,
+        "name": "Jessica",
+        "email": "jessica@fb.com",
+        "order": [
+          {
+            "itemId": 3,
+            "quantity": 7
+          }
+        ],
+        "total": "22.76",
+        "createdAt": "6/30/2022, 9:36:45 AM",
+        "receipt": [
+          {
+            "itemId": 3,
+            "quantity": 7,
+            "name": "Cinnamon Rolls",
+            "price": 2.99
+          }
+        ]
+      }
+    }
   ]
 }
