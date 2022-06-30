@@ -15,15 +15,15 @@ export default function OrderDetail({ order, orderId, showDescription }) {
         </div>
 
         {showDescription && order.receipt && (
-          <div classId="order-receipt-row">
+          <div className="order-receipt-row">
             {order.receipt.map((element) => {
               return (
-                <div key={order.itemId} class="receipt-div">
-                  <span class="receipt-name">Name: {element.name}</span>
-                  <span class="receipt-quantity">
+                <div key={order.itemId} className="receipt-div">
+                  <span className="receipt-name">Name: {element.name}</span>
+                  <span className="receipt-quantity">
                     Quantity: {element.quantity}
                   </span>
-                  <span class="receipt-price">Price: {element.price}</span>
+                  <span className="receipt-price">Price: {element.price}</span>
                 </div>
               );
             })}

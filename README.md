@@ -19,14 +19,14 @@ https://www.loom.com/share/0b4c9e6598b443c9aa9de6f9a53a62d2
 - [x] User can click the '+' button on a product cart to increment that product in the shopping cart.
 - [x] User can click the '-' button on a product cart to increment that product in the shopping cart.
 - [x] Shopping cart displays a table of products, quantities, subtotal, tax, and total.
-- [ ] User can check out, and can view receipt upon completion.
+- [x] User can check out, and can view receipt upon completion.
 
 #### Stretch Features
 
-- [ ] User can click in the top navigation bar to scroll to the relevant section.
-- [ ] User sees a "not found" display when searching for a nonexistent product.
-- [ ] Create an endpoint for fetching all orders in the database, and an endpoint for serving an individual order based on its id.
-- [ ] Build a page in the UI that displays the list of all past orders and lets the user click on any individual order to take them to a more detailed page of the transaction.
+- [x] User can click in the top navigation bar to scroll to the relevant section.
+- [x] User sees a "not found" display when searching for a nonexistent product.
+- [x] Create an endpoint for fetching all orders in the database, and an endpoint for serving an individual order based on its id.
+- [x] Build a page in the UI that displays the list of all past orders and lets the user click on any individual order to take them to a more detailed page of the transaction.
 - [ ] Allow users to use an input to filter orders by the email of the person who placed the order.
 
 ### Passing Automated Tests
@@ -280,7 +280,7 @@ The following specifications were met on the Express backend and the React front
         - [x] `createdAt` - a string representation of the date and time when the order was placed
       - **optional**:
         - [x] `receipt` - text describing the order (what might go on a receipt)
-    - [ ] It should then send a JSON response back to the client with the new purchase like so: `{ "purchase": purchase }`. The response should have a `201` status code for a resource created action.
+    - [x] It should then send a JSON response back to the client with the new purchase like so: `{ "purchase": purchase }`. The response should have a `201` status code for a resource created action.
 
 ---
 
@@ -288,15 +288,19 @@ The following specifications were met on the Express backend and the React front
 
 - Did the topics discussed in your labs prepare you to complete the assignment? Be specific, which features in your weekly assignment did you feel unprepared to complete?
 
-I felt like they provided me a good foundation to start with, but I believe more in depth material on useEffect and the component lifecylce would have helped me with many of the issues I struggled with. I spent most of my time struggling with those concepts.
+Week 2: I felt like they provided me a good foundation to start with, but I believe more in depth material on useEffect and the component lifecylce would have helped me with many of the issues I struggled with. I spent most of my time struggling with those concepts.
+
+Week 3: I struggled a bit with rendering all the orders upon clicking the Order tab in the navbar, as when I submitted an order it wouldn’t show on the Order page unless I refreshed. I solved this issue by examining all the components from App.jsx to Order.jsx and identifying where to place the axios.get request to pull all the orders, ultimately moving the get request from App.jsx to the component that actually contained the order details.
 
 - If you had more time, what would you have done differently? Would you have added additional features? Changed the way your project responded to a particular event, etc.
 
-I would have added an ability to rate a product by filling out the stores. I also would have reformmated much of the logic. As I am not well experienced with React, I didn't really initially understand where to put specific variables, such as putting the state in App.jsx, which lead to later problems and reformatting.
+Week 2: I would have added an ability to rate a product by filling out the stores. I also would have reformmated much of the logic. As I am not well experienced with React, I didn't really initially understand where to put specific variables, such as putting the state in App.jsx, which lead to later problems and reformatting.
+
+Week 3: I would have formatted the receipt and the individual order details better. I also would have tried adding more details to why the order failed if a user tried to checkout and submit with missing fields, such as specifying if the name or email failed.
 
 - Reflect on your project demo, what went well? Were there things that maybe didn't go as planned? Did you notice something that your peer did that you would like to try next time?
 
-I would like to focus more on styling, along with playing around with a more creative layout.
+Week 2 & 3: I would like to focus more on styling, along with playing around with a more creative layout.
 
 ### Open-source libraries used
 
