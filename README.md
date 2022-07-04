@@ -12,7 +12,7 @@ Week 3: https://www.loom.com/share/d2a6ebab5b4643f583fdfb521107c86b
 
 #### Core Features
 
-- [ ] Displays the following sections: header, banner, search, product grid, about, contact, and footer.
+- [x] Displays the following sections: header, banner, search, product grid, about, contact, and footer.
 - [x] On initial page load, display the products at the [GET /store endpoint](https://codepath-store-api.herokuapp.com/store).
 - [x] User can click on the categories (Clothing, food, etc) to filter the product grid by type.
 - [x] User can search for products.
